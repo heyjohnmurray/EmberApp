@@ -1,0 +1,21 @@
+body {
+	@extend .base-gradient;
+	font-size: 16px;
+	color: $dark-blue;
+	background-color: #f00;
+}
+
+a {
+	color: $dark-blue;
+	text-decoration: none;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+
+	li {
+		display: inline-block;
+	}
+}

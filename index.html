@@ -18,6 +18,19 @@
 			</div>
 			<!-- close row -->
 
+			{{! 
+				To get nav looking the way you envisioned:
+					1.	couple nav visibility with a 'toggle' setting based on a conditional or something. maybe do something like the starter kit did with the visibility of the edit button.
+
+					2.	consider:
+
+						http://stackoverflow.com/questions/16072557/switch-view-template-based-on-model-state-in-ember-js
+						http://stackoverflow.com/questions/13979729/ember-view-template-as-a-computed-property
+
+					3.	create two navs and toggle their visibility with css or js. lame to do it this way, but it is still a possible solution.
+
+			}}
+
 			<div class="row">
 				<div class="small-10 small-offset-2 medium-6 medium-offset-3 large-4 large-offset-4 columns">
 					<ul class="nav">
@@ -26,8 +39,8 @@
 								<div class='controls is-round'>
 									+
 								</div>
-								<div><
-									strong>Add</strong> Items
+								<div>
+									<strong>Add</strong> Items
 								</div>
 							{{/link-to}}
 						</li>

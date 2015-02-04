@@ -1567,11 +1567,21 @@ ul {
   text-align: center;
   margin: 20px 0; }
 
+.extend-animation, .controls, .nav-label {
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  transition: all 0.2s linear; }
+  .extend-animation:hover, .controls:hover, .nav-label:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1); }
+
 nav li {
   display: inline-block; }
 
 .controls {
-  float: left;
   width: 115px;
   height: 115px;
   line-height: 85px;
@@ -1579,14 +1589,15 @@ nav li {
   background-color: #4adcb1;
   text-align: center;
   font-size: 800%;
-  font-weight: bold;
-  transition: all .2s linear; }
+  font-weight: bold; }
   .controls.is-round {
     border-radius: 115px; }
   .controls:hover {
-    font-size: 850%;
-    transform: scale(1.1); }
+    font-size: 850%; }
   .controls + div {
     text-align: center;
     text-transform: uppercase;
     font-size: 120%; }
+
+.nav-label:hover {
+  font-size: 120%; }

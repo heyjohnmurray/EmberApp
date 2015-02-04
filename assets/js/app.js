@@ -5,9 +5,3 @@ App.Router.map(function(){
 	this.resource('add');
 	this.resource('view');
 });
-
-App.NavRoute = Ember.Route.extend({
-	renderTemplate: function() {
-		this.render({ controller: 'nav' });
-	}
-});

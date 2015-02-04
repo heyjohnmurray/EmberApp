@@ -1,3 +1,11 @@
+.extend-animation {
+	@include transition(all .2s linear);
+
+	&:hover {
+		@include transform(scale(1.1));
+	}
+}
+
 nav {
 	li {
 		display: inline-block;
@@ -5,8 +13,8 @@ nav {
 }
 
 .controls {
+	@extend .extend-animation;
 	$dimensions: 115px;
-	float:left;
 	width: $dimensions;
 	height: $dimensions;
 	line-height: 85px;
@@ -15,7 +23,7 @@ nav {
 	text-align: center;
 	font-size: 800%;
 	font-weight: bold;
-	transition: all .2s linear;
+	
 
 	&.is-round {
 		border-radius: $dimensions;
@@ -23,7 +31,6 @@ nav {
 
 	&:hover {
 		font-size: 850%;
-		transform: scale(1.1); // convert this to a bourbon mixin
 	}
 
 	+ div {
@@ -32,3 +39,12 @@ nav {
 		font-size: 120%;
 	}
 }
+
+.nav-label {
+	@extend .extend-animation;
+
+	&:hover {
+		font-size: 120%;
+	}
+}
+

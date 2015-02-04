@@ -8,16 +8,42 @@
 	</head>
 	<body>
 		<script type="text/x-handlebars">
-			{{#link-to 'index'}}asdf{{/link-to}}
-			<nav>
-				<li>{{#link-to 'about'}}About{{/link-to}}</li>
-			</nav>
+			<div class="row">
+				<div class="small-10 small-offset-1 medium-8 medium-offset-2 columns">
+					{{#link-to 'index'}}
+						<img src="assets/images/logo.png" width="" height="" alt="Pick Up logo" class="logo">
+					{{/link-to}}
+				</div>
+				<!-- close column -->
+			</div>
+			<!-- close row -->
 
 			{{outlet}}
 		</script>
 
-		<script type="text/x-handlebars" id="about">
-			text
+		<script type="text/x-handlebars" id="nav">
+			<div class="row">
+				<div class="small-10 small-offset-2 medium-6 medium-offset-3 large-4 large-offset-4 columns">
+					<ul>
+						<li>
+							{{#link-to 'add'}}<span><strong>Add</strong> Items</span>{{/link-to}}
+						</li>
+						<li>
+							{{#link-to 'view'}}<span><strong>View</strong> Items</span>{{/link-to}}
+						</li>
+					</ul>
+				</div>
+				<!-- close columns -->
+			</div>
+			<!-- close row -->
+		</script>
+
+		<script type="text/x-handlebars" id="add">
+			<p>This is the add items section.</p>
+	    </script>
+
+	    <script type="text/x-handlebars" id="view">
+			<p>This is the view items section.</p>
 	    </script>
 
 		<!-- dependencies -->

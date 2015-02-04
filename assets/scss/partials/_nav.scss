@@ -23,7 +23,7 @@ nav {
 
 	&:hover {
 		font-size: 850%;
-		transform: scale(1.1);
+		transform: scale(1.1); // convert this to a bourbon mixin
 	}
 
 	+ div {

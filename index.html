@@ -3,34 +3,44 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title></title>
+		<title>PickUp</title>
 		<link rel="stylesheet" href="assets/css/compiled.css" />
 	</head>
 	<body>
-		<div class="row">
-			<div class="small-10 small-offset-1 medium-8 medium-offset-2 columns">
-				<img src="assets/images/logo.png" width="" height="" alt="Pick Up logo" class="logo">
+		<script type="text/x-handlebars">
+			<div class="row">
+				<div class="small-10 small-offset-1 medium-8 medium-offset-2 columns">
+					<img src="assets/images/logo.png" width="" height="" alt="Pick Up logo" class="logo">
+				</div>
+				<!-- close column -->
 			</div>
-			<!-- close column -->
-		</div>
-		<!-- close row -->
-		<div class="row">
-			<div class="small-10 small-offset-2 medium-6 medium-offset-3 large-4 large-offset-4 columns">
-				<ul>
-					<li>
-						<a href="#/add-items" onclick={add} class="controls is-round">+</a>
-						<span><strong>Add</strong> Items</span>
-					</li>
-					<li>
-						<a href="#/view-items" onclick={view} class="controls is-round">
-							<img src="assets/images/icons/icon-magnifying-glass.png" width="75" height="75" alt="">
-						</a>
-						<span><strong>View</strong> Items</span>
-					</li>
-				</ul>
+			<!-- close row -->
+
+			<div class="row">
+				<div class="small-10 small-offset-2 medium-6 medium-offset-3 large-4 large-offset-4 columns">
+					<ul>
+						<li>
+							<a href="#/add-items" class="controls is-round">+</a>
+							<span><strong>Add</strong> Items</span>
+						</li>
+						<li>
+							<a href="#/view-items" onclick={view} class="controls is-round">
+								<img src="assets/images/icons/icon-magnifying-glass.png" width="75" height="75" alt="">
+							</a>
+							<span><strong>View</strong> Items</span>
+						</li>
+					</ul>
+				</div>
+				<!-- close columns -->
 			</div>
-			<!-- close columns -->
-		</div>
-		<!-- close row -->
+			<!-- close row -->
+		</script>
+
+		<!-- dependencies -->
+		<script src="assets/js/libs/jquery-2.1.3.min.js"></script>
+		<script src="assets/js/libs/handlebars-2.0.0.min.js"></script>
+		<script src="assets/js/libs/ember-1.9.1.min.js"></script>
+		<script src="assets/js/libs/ember-data-1.0.0.min.js"></script>
+		<script src="assets/js/app.min.js"></script>
 	</body>
 </html>

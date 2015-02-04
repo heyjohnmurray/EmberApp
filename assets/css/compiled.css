@@ -1586,10 +1586,5 @@ ul {
     font-size: 120%; }
 
 .logo {
-  text-align: center; }
-  .page-index .logo {
-    margin: 80px 0; }
-  .page-interior .logo {
-    margin: 40px 0; }
-
-/*# sourceMappingURL=compiled.css.map */
+  text-align: center;
+  margin: 80px 0; }

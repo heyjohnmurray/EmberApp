@@ -1,5 +1,11 @@
 App = Ember.Application.create();
 
 App.Router.map(function(){
-  	this.resource('app-menu');
+  	this.route('add');
+});
+
+App.AddRoute = Ember.Route.extend({
+	model: function(){
+		return add;
+	}
 });

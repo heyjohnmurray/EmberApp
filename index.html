@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="assets/css/compiled.css" />
 	</head>
 	<body>
-		<script type="text/x-handlebars">
+		<script type="text/x-handlebars" id="home">
 			<div class="row">
 				<div class="small-10 small-offset-1 medium-8 medium-offset-2 columns">
 					<img src="assets/images/logo.png" width="" height="" alt="Pick Up logo" class="logo">
@@ -20,20 +20,29 @@
 				<div class="small-10 small-offset-2 medium-6 medium-offset-3 large-4 large-offset-4 columns">
 					<ul>
 						<li>
-							<a href="#/add-items" class="controls is-round">+</a>
-							<span><strong>Add</strong> Items</span>
+							{{#link-to 'add'}}<span><strong>Add</strong> Items</span>{{/link-to}}
+							// <a href="#/add-items" class="controls is-round">+</a>
 						</li>
 						<li>
-							<a href="#/view-items" onclick={view} class="controls is-round">
-								<img src="assets/images/icons/icon-magnifying-glass.png" width="75" height="75" alt="">
-							</a>
-							<span><strong>View</strong> Items</span>
+							{{#link-to 'view'}}<span><strong>View</strong> Items</span>{{/link-to}}
+							// <a href="#/view-items" onclick={view} class="controls is-round">
+							// 	<img src="assets/images/icons/icon-magnifying-glass.png" width="75" height="75" alt="">
+							// </a>
+							// <span><strong>View</strong> Items</span>
 						</li>
 					</ul>
 				</div>
 				<!-- close columns -->
 			</div>
 			<!-- close row -->
+		</script>
+
+		<script type="text/x-handlebars" id="addItems">
+			<p>This is the add items template</p>
+		</script>
+
+		<script type="text/x-handlebars" id="viewItems">
+			<p>This is the view items template</p>
 		</script>
 
 		<!-- dependencies -->

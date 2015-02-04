@@ -18,32 +18,52 @@
 			</div>
 			<!-- close row -->
 
-			{{outlet}}
-		</script>
-
-		<script type="text/x-handlebars" data-template-name="nav">
 			<div class="row">
 				<div class="small-10 small-offset-2 medium-6 medium-offset-3 large-4 large-offset-4 columns">
-					<ul>
+					<ul class="nav">
 						<li>
-							{{#link-to 'add'}}<span><strong>Add</strong> Items</span>{{/link-to}}
+							{{#link-to 'add'}}
+								<div class='controls is-round'>
+									+
+								</div>
+								<div><strong>Add</strong> Items</div>
+							{{/link-to}}
 						</li>
 						<li>
-							{{#link-to 'view'}}<span><strong>View</strong> Items</span>{{/link-to}}
+							{{#link-to 'view'}}
+								<div class='controls is-round'>
+									<img src="assets/images/icons/icon-magnifying-glass.png" width="75" height="75" alt="">
+								</div>
+								<div><strong>View</strong> Items</div>
+							{{/link-to}}
 						</li>
 					</ul>
 				</div>
 				<!-- close columns -->
 			</div>
 			<!-- close row -->
+
+			{{outlet}}
 		</script>
 
 		<script type="text/x-handlebars" data-template-name="add">
-			<p>This is the add items section.</p>
+			<div class="row">
+				<div class="column small-16">
+					<p>This is the add items section.</p>
+				</div>
+				<!-- /.column-16 -->
+			</div>
+			<!-- /.row -->
 	    </script>
 
 	    <script type="text/x-handlebars" data-template-name="view">
-			<p>This is the view items section.</p>
+	    	<div class="row">
+				<div class="column small-16">
+					<p>This is the view items section.</p>
+				</div>
+				<!-- /.column-16 -->
+			</div>
+			<!-- /.row -->
 	    </script>
 
 		<!-- dependencies -->

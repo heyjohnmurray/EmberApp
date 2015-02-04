@@ -1,0 +1,34 @@
+nav {
+	li {
+		display: inline-block;
+	}
+}
+
+.controls {
+	$dimensions: 115px;
+	float:left;
+	width: $dimensions;
+	height: $dimensions;
+	line-height: 85px;
+	margin: 5px 5px 20px 5px;
+	background-color: $turquoise;
+	text-align: center;
+	font-size: 800%;
+	font-weight: bold;
+	transition: all .2s linear;
+
+	&.is-round {
+		border-radius: $dimensions;
+	}
+
+	&:hover {
+		font-size: 850%;
+		transform: scale(1.1);
+	}
+
+	+ div {
+		text-align: center;
+		text-transform: uppercase;
+		font-size: 120%;
+	}
+}

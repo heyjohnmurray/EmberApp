@@ -1563,6 +1563,13 @@ ul {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a0f4a0', endColorstr='#11ead7',GradientType=0 );
   /* IE6-9 */ }
 
+.logo {
+  text-align: center;
+  margin: 20px 0; }
+
+nav li {
+  display: inline-block; }
+
 .controls {
   float: left;
   width: 115px;
@@ -1579,12 +1586,7 @@ ul {
   .controls:hover {
     font-size: 850%;
     transform: scale(1.1); }
-  .controls + span {
-    display: block;
+  .controls + div {
     text-align: center;
     text-transform: uppercase;
     font-size: 120%; }
-
-.logo {
-  text-align: center;
-  margin: 80px 0; }

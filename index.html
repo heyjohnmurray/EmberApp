@@ -7,49 +7,23 @@
 		<link rel="stylesheet" href="assets/css/compiled.css" />
 	</head>
 	<body>
-		<script type="text/x-handlebars" id="home">
-			<div class="row">
-				<div class="small-10 small-offset-1 medium-8 medium-offset-2 columns">
-					<img src="assets/images/logo.png" width="" height="" alt="Pick Up logo" class="logo">
-				</div>
-				<!-- close column -->
-			</div>
-			<!-- close row -->
+		<script type="text/x-handlebars">
+			{{#link-to 'index'}}asdf{{/link-to}}
+			<nav>
+				<li>{{#link-to 'about'}}About{{/link-to}}</li>
+			</nav>
 
-			<div class="row">
-				<div class="small-10 small-offset-2 medium-6 medium-offset-3 large-4 large-offset-4 columns">
-					<ul>
-						<li>
-							{{#link-to 'add'}}<span><strong>Add</strong> Items</span>{{/link-to}}
-							// <a href="#/add-items" class="controls is-round">+</a>
-						</li>
-						<li>
-							{{#link-to 'view'}}<span><strong>View</strong> Items</span>{{/link-to}}
-							// <a href="#/view-items" onclick={view} class="controls is-round">
-							// 	<img src="assets/images/icons/icon-magnifying-glass.png" width="75" height="75" alt="">
-							// </a>
-							// <span><strong>View</strong> Items</span>
-						</li>
-					</ul>
-				</div>
-				<!-- close columns -->
-			</div>
-			<!-- close row -->
+			{{outlet}}
 		</script>
 
-		<script type="text/x-handlebars" id="addItems">
-			<p>This is the add items template</p>
-		</script>
-
-		<script type="text/x-handlebars" id="viewItems">
-			<p>This is the view items template</p>
-		</script>
+		<script type="text/x-handlebars" id="about">
+			text
+	    </script>
 
 		<!-- dependencies -->
 		<script src="assets/js/libs/jquery-2.1.3.min.js"></script>
 		<script src="assets/js/libs/handlebars-2.0.0.min.js"></script>
 		<script src="assets/js/libs/ember-1.9.1.min.js"></script>
-		<script src="assets/js/libs/ember-data-1.0.0.min.js"></script>
-		<script src="assets/js/app.min.js"></script>
+		<script src="assets/js/app.js"></script>
 	</body>
 </html>

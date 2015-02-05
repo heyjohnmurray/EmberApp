@@ -1616,7 +1616,7 @@ form {
     clear: both; }
 
 input {
-  height: 80px; }
+  height: 3.3em; }
   input[type=text] {
     padding: .5em;
     width: 100%; }
@@ -1626,7 +1626,8 @@ input {
 
 .logo {
   text-align: center;
-  margin: 20px 0; }
+  display: block;
+  margin: 30px auto 10px auto; }
 
 .extend-animation, .controls, .nav-label {
   -webkit-transition: all 0.2s linear;

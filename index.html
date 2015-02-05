@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="assets/css/compiled.css" />
 	</head>
 	<body>
-		<script type="text/x-handlebars">
+		<script type="text/x-handlebars" data-template-name="index">
 			<div class="row">
 				<div class="small-10 small-offset-1 medium-8 medium-offset-2 columns">
 					{{#link-to 'index'}}
@@ -32,7 +32,7 @@
 					** Also, consider putting fade transitions between view changes
 
 			}}
-
+			
 			<div class="row">
 				<div class="small-10 small-offset-2 medium-6 medium-offset-3 large-4 large-offset-4 columns">
 					<ul class="nav">
@@ -60,7 +60,13 @@
 				</div>
 				<!-- close columns -->
 			</div>
+
+			<button {{action 'show'}}>CLICK ME</button>
+
 			<!-- close row -->
+			{{#if 'isVisible'}}
+				<p>Content is visible</p>
+			{{/if}}
 
 			{{outlet}}
 		</script>

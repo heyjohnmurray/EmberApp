@@ -17,10 +17,11 @@ nav {
 	$dimensions: 115px;
 	width: $dimensions;
 	height: $dimensions;
-	line-height: 85px;
+	line-height: 115px;
 	margin: 5px 5px 20px 5px;
 	background-color: $turquoise;
 	text-align: center;
+	font-family: Arial;
 	font-size: 800%;
 	font-weight: bold;
 	
@@ -37,6 +38,11 @@ nav {
 		text-align: center;
 		text-transform: uppercase;
 		font-size: 120%;
+	}
+
+	img {
+		position: relative;
+		top: -25px;
 	}
 }
 

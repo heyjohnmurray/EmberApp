@@ -1,0 +1,18 @@
+form {
+	@include clearfix;
+	padding: 1em 0;
+}
+
+input {
+	height: 80px;
+
+	&[type=text] {
+		padding: .5em;
+		width: 100%;
+	}
+
+	&[type=submit] {
+		padding: .5em;
+		width: 100%;
+	}
+}

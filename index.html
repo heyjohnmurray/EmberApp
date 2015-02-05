@@ -8,47 +8,51 @@
 	</head>
 	<body>
 		<script type="text/x-handlebars" data-template-name='_masthead'>
-			<div class="row">
-				<div class="small-10 small-offset-1 medium-8 medium-offset-2 columns">
-					{{#link-to 'index'}}
-						<img src="assets/images/logo.png" width="" height="" alt="Pick Up logo" class="logo">
-					{{/link-to}}
+			<section>
+				<div class="row">
+					<div class="column small-10 small-offset-1 medium-8 medium-offset-2">
+						{{#link-to 'index'}}
+							<img src="assets/images/logo.png" width="" height="" alt="Pick Up logo" class="logo">
+						{{/link-to}}
+					</div>
+					<!-- close column -->
 				</div>
-				<!-- close column -->
-			</div>
-			<!-- close row -->
+				<!-- close row -->
+			</section>
 		</script>
 		<!-- END global masthead template -->
 
 		<script type="text/x-handlebars" data-template-name="_indexNav">
-			<div class="row">
-				<div class="small-10 small-offset-2 medium-6 medium-offset-3 large-4 large-offset-4 columns">
-					<ul class="nav">
-						<li>
-							{{#link-to 'add'}}
-								<div class="controls is-round">
-									+
-								</div>
-								<div class="nav-label">
-									<strong>Add</strong> Items
-								</div>
-							{{/link-to}}
-						</li>
-						<li>
-							{{#link-to 'view'}}
-								<div class="controls is-round">
-									<img src="assets/images/icons/icon-magnifying-glass.png" width="75" height="75" alt="">
-								</div>
-								<div class="nav-label">
-									<strong>View</strong> Items
-								</div>
-							{{/link-to}}
-						</li>
-					</ul>
+			<section>
+				<div class="row">
+					<div class="small-10 small-offset-2 medium-6 medium-offset-3 large-4 large-offset-4 columns">
+						<ul class="nav">
+							<li>
+								{{#link-to 'add'}}
+									<div class="controls is-round">
+										+
+									</div>
+									<div class="nav-label">
+										<strong>Add</strong> Items
+									</div>
+								{{/link-to}}
+							</li>
+							<li>
+								{{#link-to 'view'}}
+									<div class="controls is-round">
+										<img src="assets/images/icons/icon-magnifying-glass.png" width="75" height="75" alt="">
+									</div>
+									<div class="nav-label">
+										<strong>View</strong> Items
+									</div>
+								{{/link-to}}
+							</li>
+						</ul>
+					</div>
+					<!-- close columns -->
 				</div>
-				<!-- close columns -->
-			</div>
-			<!-- close row -->
+				<!-- close row -->
+			</section>
 		</script>
 		<!-- END index nav -->
 
@@ -83,26 +87,37 @@
 		<script type="text/x-handlebars" data-template-name="add">
 			{{partial "_masthead"}}
 
-			<div class="row">
-				<div class="column small-16">
-					<p>This is the add items section.</p>
+			<section>
+				<div class="row">
+					<div class="column small-12 medium-9 medium-centered">
+						<form action="">
+							<div class="column small-9">
+								{{input type="text"}}
+							</div>
+							<div class="column small-3">
+								{{input type="submit" value="+"}}
+							</div>
+						</form>
+					</div>
+					<!-- /.column small-16 medium-12 medium-centered -->				
 				</div>
-				<!-- /.column-16 -->
-			</div>
-			<!-- /.row -->
+				<!-- /.row -->
+			</section>
 	    </script>
 	    <!-- END add items template -->
 
 	    <script type="text/x-handlebars" data-template-name="view">
 	    	{{partial "_masthead"}}
 
-	    	<div class="row">
-				<div class="column small-16">
-					<p>This is the view items section.</p>
+	    	<section>
+		    	<div class="row">
+					<div class="column small-16">
+						<p>This is the view items section.</p>
+					</div>
+					<!-- /.column-16 -->
 				</div>
-				<!-- /.column-16 -->
-			</div>
-			<!-- /.row -->
+				<!-- /.row -->
+			</section>
 	    </script>
 	    <!-- END view items template -->
 

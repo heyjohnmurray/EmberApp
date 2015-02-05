@@ -18,8 +18,9 @@
 			</div>
 			<!-- close row -->
 		</script>
+		<!-- END global masthead template -->
 
-		<script type="text/x-handlebars" data-template-name="_homeNav">
+		<script type="text/x-handlebars" data-template-name="_indexNav">
 			<div class="row">
 				<div class="small-10 small-offset-2 medium-6 medium-offset-3 large-4 large-offset-4 columns">
 					<ul class="nav">
@@ -49,14 +50,35 @@
 			</div>
 			<!-- close row -->
 		</script>
+		<!-- END index nav -->
 
 		<script type="text/x-handlebars" data-template-name="index">
-			{{partial "_masthead"}}
+			{{!-- 
+					The lesson here is that if you leave off a template name for your application template, 
+					then Ember will assume that you want the contents of the template to apply globally. 
 
-			{{partial "_homeNav"}}
+					By giving the application template a name, all your other templates are then treated independently
+					as unique pages. This is how I was able to have the big button nav only appear on the index page
+			--}}
+
+
+
+			{{!--
+					Partials work just like 'includes' in php or 'partials' in sass
+			--}}
+
+			{{partial "_masthead"}} 
+
+			{{partial "_indexNav"}}
+
+			{{!--
+					Ember uses the 'outlet' tag to output view templates where you want in your app.
+					You can have multiple outlet tags and assign specifc templates to them if you want.
+			--}}
 
 			{{outlet}}
 		</script>
+		<!-- END index template -->
 
 		<script type="text/x-handlebars" data-template-name="add">
 			{{partial "_masthead"}}
@@ -69,6 +91,7 @@
 			</div>
 			<!-- /.row -->
 	    </script>
+	    <!-- END add items template -->
 
 	    <script type="text/x-handlebars" data-template-name="view">
 	    	{{partial "_masthead"}}
@@ -81,6 +104,7 @@
 			</div>
 			<!-- /.row -->
 	    </script>
+	    <!-- END view items template -->
 
 		<!-- dependencies -->
 		<script src="assets/js/libs/jquery-2.1.3.min.js"></script>

@@ -9,6 +9,10 @@
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a0f4a0', endColorstr='#11ead7',GradientType=0 ); /* IE6-9 */
 }
 
+.shadow {
+	border-bottom: 5px solid $turquoise;
+}
+
 .text-center {
 	text-align: center;
 }

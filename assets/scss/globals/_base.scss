@@ -28,13 +28,6 @@ a {
 	}
 }
 
-input[type=submit] {
-	&:hover {
-		color: $global-hover-color;
-		background-color: $global-hover-background-color;
-	}
-}
-
 ul {
 	margin: 0;
 	padding: 0;
@@ -43,40 +36,40 @@ ul {
 	li {
 		display: inline-block;
 	}
+}
 
-	&.list {
-		font-family: $font-family;
-		font-size: 1.5em;
-		text-transform: capitalize;
+// could be a div or ul
+.list {
+	font-family: $font-family;
+	font-size: 1.5em;
+	text-transform: capitalize;
 
-		li {
-			display: block;
-			margin-bottom: .25em;
-			padding: .5em 1em;
-			color: $dark-blue;
-			background-color: $off-white;
-			border-bottom: 5px solid $turquoise;
+	.item {
+		@extend .shadow;
+		display: block;
+		margin-bottom: .25em;
+		padding: .5em 1em;
+		color: $dark-blue;
+		background-color: $off-white;
 
-			&:hover {
-				cursor: pointer;
-			}
+		&:hover {
+			cursor: pointer;
 		}
+	}
 
-		a {
-			float: right;
-			position: relative;
-			font-size: .65em;
-			font-weight: $bold;
-			top: -.8em;
-			right: -1.6em;
-			padding: .8em;
-			color: $dark-blue;
-			background-color: $light-green;
+	.item-details { // target a class instead of <a> tag in for modularity
+		@extend .shadow;
+		display: block;
+		padding: .77em;
+		font-size: .65em;
+		font-weight: $bold;
+		color: $dark-blue;
+		text-align: center;
+		background-color: $light-green;
 
-			&:hover {
-				color: $global-hover-color;
-				background-color: $global-hover-background-color;
-			}
+		&:hover {
+			color: $global-hover-color;
+			background-color: $global-hover-background-color;
 		}
 	}
 }

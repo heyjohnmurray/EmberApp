@@ -104,7 +104,7 @@
 							<!-- /.row -->
 						</form>
 					</div>
-					<!-- /.column small-16 medium-12 medium-centered -->				
+					<!-- /.column -->
 				</div>
 				<!-- /.row -->
 			</section>
@@ -115,35 +115,54 @@
 						<p>{{itemName}}</p>
 						{{!--
 							On submit, list of user-added items should dynamically populate here and push the presets down!!!
+							Also, make sure you style these as something beside a <p> tag. Probably a bar like the presets.
 						--}}
 					</div>
-					<!-- /.column small-16 medium-12 medium-centered -->				
+					<!-- /.column -->
 				</div>
 				<!-- /.row -->
 			</section>
 
 			<section>
+				<div class="row">
+					<div class="column small-12 medium-9 medium-centered large-5 large-push-2 large-uncentered">
+			    		<h2 class="headline">Need help adding items?</h2>
+			    	</div>
+			    	<div class="column small-12 medium-9 medium-centered large-5 large-push-1 large-uncentered">
+			    		<h4 class="subheadline">Choose a staple from the list below.</h4>
+			    	</div>
+		    		<!-- /.column -->
+		    	</div>
+				<!-- /.row -->
 		    	<div class="row">
 		    		<div class="column small-12 medium-9 medium-centered">
-		    		<h2 class="headline">Need help adding items?</h2>
-		    		<h4 class="subheadline">Choose a staple from the list below.</h4>
 		    			{{#each model}}
-							<ul class="item-library list">
-						    	<li {{action 'addToList'}}>
-						    		<span>{{name}}</span>
-						    		<a href="" class="view-details">
-						    			Add to List &raquo;
-						    		</a>
-						    	</li>
-						    	{{!--
-						    		clicking on a link should update the model containing 'my items' json.
-						    		then that model updates the view. there will be a list of my items on this 
-						    		page, too, i think.
+		    				<div class="row">
+		    					<div class="list item-library">
+			    					<div class="column small-8 medium-9 no-padding-right">
+								    	<div {{action 'addToList'}} class="item">
+								    		<span>{{name}}</span>
+								    	</div>
+								    	{{!--
+								    		clicking on a link should update the model containing 'my items' json.
+								    		then that model updates the view. there will be a list of my items on this 
+								    		page, too, i think.
 
-						    		add in a 'view details' link. this will route the user to a specific page
-						    		for the product they clicked on. pass the product name to the route.
-						    	--}}
-						    </ul>
+								    		add in a 'view details' link. this will route the user to a specific page
+								    		for the product they clicked on. pass the product name to the route.
+								    	--}}
+								    </div>
+								    <!-- /.column -->
+									<div class="column small-4 medium-3 no-padding-left">
+										<a href="" class="item-details">
+							    			Add +
+							    		</a>
+									</div>
+									<!-- /.column -->
+								</div>
+								<!-- /.list -->
+							</div>
+							<!-- /.row -->
 						{{/each}}
 		    		</div>
 		    		<!-- /.column -->

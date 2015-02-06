@@ -12,12 +12,12 @@ input {
 		font-size: 30px;
 		font-weight: $extra-bold;
 		text-transform: capitalize;
-		border: 3px solid $dark-blue;
+		border: 3px solid $color-tertiary;
 		outline: none;
 
 		&:focus {
-			color: $violet;
-			border: 5px solid $violet;
+			color: $global-focus-color;
+			border: 5px solid $global-focus-color;
 		}
 	}
 
@@ -27,7 +27,7 @@ input {
 		border: none;
 		color: $white;
 		font-size: 30px;
-		background-color: $dark-blue;
+		background-color: $color-tertiary;
 		text-transform: uppercase;
 
 		&:hover {

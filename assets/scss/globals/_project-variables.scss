@@ -11,9 +11,14 @@ $off-white: #fbfbfb;
 
 $color-primary: $light-green;
 $color-secondary: $bright-turquoise;
+$color-tertiary: $dark-blue;
+$color-quarternary: $turquoise;
+$highlight: $violet;
 
 $global-hover-color: $white;
-$global-hover-background-color: $violet;
+$global-hover-background-color: $highlight;
+$global-border-shadow-color: $turquoise;
+$global-focus-color: $highlight;
 
 $font-family: 'Dosis', Arial, sans-serif;
 $normal: 400;

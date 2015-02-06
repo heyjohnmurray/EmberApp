@@ -1546,6 +1546,13 @@ ul {
   list-style-type: none; }
   ul li {
     display: inline-block; }
+  ul.list {
+    font-family: "Dosis", Arial, sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    text-transform: capitalize; }
+    ul.list li {
+      line-height: 1.5; }
 
 .base-gradient, body {
   background: #a0f4a0;
@@ -1663,7 +1670,7 @@ nav li {
     font-size: 120%; }
   .controls img {
     position: relative;
-    top: -25px; }
+    top: -20px; }
 
 .nav-label:hover {
   font-size: 120%; }

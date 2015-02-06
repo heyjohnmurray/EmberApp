@@ -8,3 +8,15 @@
 	background: linear-gradient(to bottom,  #a0f4a0 0%,#11ead7 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a0f4a0', endColorstr='#11ead7',GradientType=0 ); /* IE6-9 */
 }
+
+.text-center {
+	text-align: center;
+}
+
+.no-padding-left {
+	padding-left: 0;
+}
+
+.no-padding-right {
+	padding-right: 0;
+}

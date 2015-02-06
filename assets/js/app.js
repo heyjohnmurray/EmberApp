@@ -74,4 +74,4 @@ var itemLibrary = [
 	}
 ];
 
-var userLibrary = []
+var userLibrary = [];

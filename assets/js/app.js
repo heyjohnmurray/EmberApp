@@ -36,6 +36,23 @@
 
 */
 
+var itemLibrary = [
+	{
+		'name' : 'bread'
+	},
+	{
+		'name' : 'milk'
+	},
+	{
+		'name' : 'eggs'
+	},
+	{
+		'name' : 'cereal'
+	}
+];
+
+var userLibrary = [];
+
 App = Ember.Application.create();
 
 App.Router.map(function(){
@@ -54,24 +71,9 @@ App.AddController = Ember.ObjectController.extend({
 	actions: {
 		// add the clicked item to userLibrary JSON object
 		addToList: function(){
-			alert('hey');
-		}
+			var value = this.get('itemName');	// gets text input value
+			userLibrary.push(value);			// adds it to JSON Object
+			console.log(userLibrary);
+		},
 	}
 });
-
-var itemLibrary = [
-	{
-		'name' : 'bread'
-	},
-	{
-		'name' : 'milk'
-	},
-	{
-		'name' : 'eggs'
-	},
-	{
-		'name' : 'cereal'
-	}
-];
-
-var userLibrary = [];

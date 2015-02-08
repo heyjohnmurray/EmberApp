@@ -17,6 +17,13 @@ body {
 	margin: 0 0 1em 0;
 }
 
+button {
+	@include hover-transition(background-color);
+	width: 100%;
+	border: none;
+	text-transform: uppercase;
+}
+
 a {
 	@include hover-transition(background-color);
 	color: $color-tertiary;

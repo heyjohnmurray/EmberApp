@@ -67,8 +67,6 @@
 					as unique pages. This is how I was able to have the big button nav only appear on the index page
 			--}}
 
-
-
 			{{!--
 					Partials work just like 'includes' in php or 'partials' in sass
 			--}}
@@ -154,9 +152,9 @@
 								    </div>
 								    <!-- /.column -->
 									<div class="column small-4 medium-3 no-padding-left">
-										<a href="" class="item-details">
+										<button {{action 'addToList'}} class="item-details">
 							    			Add +
-							    		</a>
+							    		</button>
 									</div>
 									<!-- /.column -->
 								</div>

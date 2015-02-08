@@ -90,13 +90,14 @@
 			<section>
 				<div class="row">
 					<div class="column small-12 medium-9 medium-centered">
-						<form action="">
+						<form {{action "addToList" on="submit"}}>
 							<div class="row">
 								<div class="column small-8 medium-9 no-padding-right">
 									{{input type="text" value=itemName}}
 								</div>
 								<div class="column small-4 medium-3 no-padding-left">
 									{{input type="submit" value="Add +"}}
+									{{!-- clicking on this should add it to the page and let you keep writing --}}
 								</div>
 							</div>
 							<!-- /.row -->

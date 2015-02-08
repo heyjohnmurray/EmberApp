@@ -44,20 +44,20 @@ App.Router.map(function(){
 });
 
 App.AddRoute = Ember.Route.extend({
+	// print preset items to page
 	model: function(){
-	  	return itemLibrary;
+	  	return itemLibrary; 
 	}
 });
 
 App.AddController = Ember.ObjectController.extend({
 	actions: {
+		// add the clicked item to userLibrary JSON object
 		addToList: function(){
 			alert('hey');
-			// now write code that adds this item to your library of items
 		}
 	}
 });
-
 
 var itemLibrary = [
 	{

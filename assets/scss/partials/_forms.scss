@@ -7,6 +7,7 @@ input {
 	height: 80px;
 
 	&[type=text] {
+		@include hover-transition(border);
 		padding: .5em;
 		width: 100%;
 		font-size: 30px;
@@ -22,6 +23,7 @@ input {
 	}
 
 	&[type=submit] {
+		@include hover-transition(background-color);
 		padding: 10px;
 		width: 100%;
 		border: none;

@@ -24,3 +24,7 @@
 .no-padding-right {
 	padding-right: 0;
 }
+
+@mixin hover-transition($property) {
+	@include transition($property .25s linear);
+}

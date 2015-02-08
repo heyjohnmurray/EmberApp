@@ -18,6 +18,7 @@ body {
 }
 
 a {
+	@include hover-transition(background-color);
 	color: $color-tertiary;
 	text-decoration: none;
 	text-transform: uppercase;

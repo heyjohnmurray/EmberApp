@@ -78,18 +78,23 @@ App.AddController = Ember.ObjectController.extend({
 		// add the clicked item to userLibrary JSON object
 		addToList: function(){
 			var value = this.get('itemName');	// gets text input value
-			userLibrary.push(value);			// adds it to JSON Object
+			userLibrary.push({
+				name: value
+			});	// adds it to JSON Object
 			console.log(userLibrary);
-		} // AT SOME POINT MAKE SURE THIS ADDS THIS AS OBJECT not just a string
+		}
 	}
 });
 
 // this is how you do basic event delegation :: http://emberjs.com/guides/views/handling-events/
-// NOW THAT YOU HAVE THIS ...
 App.ClickableView = Ember.View.extend({
 	click: function(evt) {
-		var itemName = evt.target.innerHTML; // this isn't adding an object, just a string. fix this!
-		userLibrary.push(itemName);
+		var itemName = evt.target.innerHTML;
+		userLibrary.push({
+			name: itemName
+		});
 		console.log(userLibrary);
 	}
 });
+
+// take a look at the View extend in source

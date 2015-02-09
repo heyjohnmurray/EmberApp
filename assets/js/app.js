@@ -51,7 +51,11 @@ var itemLibrary = [
 	}
 ];
 
-var userLibrary = [];
+var userLibrary = [
+	{
+		'name' : 'fucks'
+	}
+];
 
 App = Ember.Application.create();
 

@@ -56,6 +56,7 @@ ul {
 	.item {
 		@extend .shadow;
 		display: block;
+		text-align: left;
 		margin-bottom: .25em;
 		padding: .5em 1em;
 		color: $color-tertiary;
@@ -66,7 +67,7 @@ ul {
 		}
 	}
 
-	.item-details { // target a class instead of <a> tag in for modularity
+	.add-item-button { // target a class instead of <a> tag in for modularity
 		@extend .shadow;
 		display: block;
 		padding: .77em;

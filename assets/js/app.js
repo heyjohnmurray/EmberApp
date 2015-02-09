@@ -61,10 +61,12 @@ App.Router.map(function(){
 });
 
 App.AddRoute = Ember.Route.extend({
-	// print preset items to page
-	model: function(){
-	  	return itemLibrary; 
-	}
+	model: function() {
+      return Ember.RSVP.hash({ // RSVP.hash lets me have multiple models in one router http://stackoverflow.com/questions/20521967/emberjs-how-to-load-multiple-models-on-the-same-route
+          presetItems: itemLibrary,
+          userItems: userLibrary
+      });
+    }
 });
 
 App.AddController = Ember.ObjectController.extend({

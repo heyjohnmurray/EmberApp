@@ -111,11 +111,9 @@
 			<section>
 				<div class="row">
 					<div class="column small-12 medium-9 medium-centered">
-						<p>{{itemName}}</p>
-						{{!--
-							On submit, list of user-added items should dynamically populate here and push the presets down!!!
-							Also, make sure you style these as something beside a <p> tag. Probably a bar like the presets.
-						--}}
+						{{#each userItems}}
+							//value needs to go here
+						{{/each}}
 					</div>
 					<!-- /.column -->
 				</div>
@@ -137,7 +135,7 @@
 		    		<div class="column small-12 medium-9 medium-centered">
 	    				<div class="row">
 	    					<div class="list item-library">
-				    			{{#each model}}
+				    			{{#each presetItems}}
 			    					<div class="column small-8 medium-9 no-padding-right">
 			    						{{#view App.ClickableView}}
 											<div class="item">{{name}}</div>

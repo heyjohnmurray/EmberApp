@@ -135,22 +135,13 @@
 				<!-- /.row -->
 		    	<div class="row">
 		    		<div class="column small-12 medium-9 medium-centered">
-		    			{{#each model}}
-		    				<div class="row">
-		    					<div class="list item-library">
+	    				<div class="row">
+	    					<div class="list item-library">
+				    			{{#each model}}
 			    					<div class="column small-8 medium-9 no-padding-right">
 			    						{{#view App.ClickableView}}
 											<div class="item">{{name}}</div>
 										{{/view}}
-
-								    	{{!--
-								    		clicking on a link should update the model containing 'my items' json.
-								    		then that model updates the view. there will be a list of my items on this 
-								    		page, too, i think.
-
-								    		add in a 'view details' link. this will route the user to a specific page
-								    		for the product they clicked on. pass the product name to the route.
-								    	--}}
 								    </div>
 								    <!-- /.column -->
 									<div class="column small-4 medium-3 no-padding-left">
@@ -159,11 +150,11 @@
 							    		</button>
 									</div>
 									<!-- /.column -->
-								</div>
-								<!-- /.list -->
+								{{/each}}
 							</div>
-							<!-- /.row -->
-						{{/each}}
+							<!-- /.list -->
+						</div>
+						<!-- /.row -->
 		    		</div>
 		    		<!-- /.column -->
 		    	</div>

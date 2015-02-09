@@ -1,21 +1,3 @@
-// TO DO NEXT:
-
-// now that you can submit input values to the JSON obecjt, 
-// figure out how to print and update the list on the page.
-// after that make sure it's passing it as an object
-// not just a string
-
-
-
-
-
-
-
-
-
-
-
-
 /*
 
 	MVC basics

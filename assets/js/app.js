@@ -88,7 +88,7 @@ App.AddController = Ember.ObjectController.extend({
 // NOW THAT YOU HAVE THIS ...
 App.ClickableView = Ember.View.extend({
 	click: function(evt) {
-		var itemName = evt.target.innerHTML;
+		var itemName = evt.target.innerHTML; // this isn't adding an object, just a string. fix this!
 		userLibrary.push(itemName);
 		console.log(userLibrary);
 	}

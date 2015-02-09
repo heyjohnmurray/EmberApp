@@ -93,24 +93,11 @@ App.AddController = Ember.ObjectController.extend({
 			userLibrary.push(value);			// adds it to JSON Object
 			console.log(userLibrary);
 		} // AT SOME POINT MAKE SURE THIS ADDS THIS AS OBJECT not just a string
-
-		// separate function b/c I need to access the value differently
-		// addPreset: function(){
-		// 	var value = this.get('name');
-
-			// THIS ALMOST WORKS BUT ONLY RETURNS FIRST NODE
-			// var value = document.querySelector('.item-library .item').innerHTML;
-			// console.log(value);
-			// var value = this.get('name');
-			// userLibrary.push(value);
-			// console.log(userLibrary);
-		// }
 	}
 });
 
 // this is how you do basic event delegation :: http://emberjs.com/guides/views/handling-events/
 // NOW THAT YOU HAVE THIS ...
-// figure out how to get the add button to pass the innerhtml value to the json object as well.
 App.ClickableView = Ember.View.extend({
 	click: function(evt) {
 		var itemName = evt.target.innerHTML;

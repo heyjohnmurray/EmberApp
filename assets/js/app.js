@@ -1,5 +1,72 @@
-/*
+var itemLibrary = [
+	{
+		'name' : 'bread'
+	},
+	{
+		'name' : 'milk'
+	},
+	{
+		'name' : 'eggs'
+	},
+	{
+		'name' : 'cereal'
+	}
+];
 
+var userLibrary = [];
+
+App = Ember.Application.create();
+
+App.Router.map(function(){
+	this.resource('add');
+	this.resource('view');
+});
+
+App.AddRoute = Ember.Route.extend({
+	model: function() {
+		return Ember.RSVP.hash({ // RSVP.hash lets me have multiple models in one router http://stackoverflow.com/questions/20521967/emberjs-how-to-load-multiple-models-on-the-same-route
+		presetItems: itemLibrary,
+		userItems: userLibrary,
+			detailsLink: function(params){
+				return add.findBy('id', params.post_id);
+			}
+		});
+    }
+});
+
+App.AddController = Ember.ObjectController.extend({
+	actions: {
+		// add the clicked item to userLibrary JSON object
+		addToList: function(){
+			var value = this.get('itemName');	// gets text input value
+			userLibrary.pushObject({
+				name: value // this is just echoing and not adding my new items from the form.
+			});	// adds it to JSON Object
+			console.log(userLibrary);
+		}
+	}
+});
+
+App.ReRenderUserList = Ember.View.extend({
+	submit: function(){
+		this.get('userLibrary').pushObject({name : value});
+	}
+});
+
+// this is how you do basic event delegation :: http://emberjs.com/guides/views/handling-events/
+App.ClickableView = Ember.View.extend({
+	click: function(evt) {
+		var itemName = evt.target.innerHTML;
+		userLibrary.pushObject({
+			name: itemName
+		});
+		console.log(userLibrary);
+	}
+});
+
+// take a look at the View extend in source
+
+/*
 	MVC basics
 
 	http://addyosmani.com/blog/understanding-mvc-and-mvp-for-javascript-and-backbone-developers/
@@ -33,68 +100,4 @@
 
 	Assist in managing application state (e.g allowing users to bookmark a particular view they have navigated to). 
 	Routers are neither a part of MVC nor present in every MVC-like framework.
-
 */
-
-var itemLibrary = [
-	{
-		'name' : 'bread'
-	},
-	{
-		'name' : 'milk'
-	},
-	{
-		'name' : 'eggs'
-	},
-	{
-		'name' : 'cereal'
-	}
-];
-
-var userLibrary = [
-	{
-		'name' : 'fucks'
-	}
-];
-
-App = Ember.Application.create();
-
-App.Router.map(function(){
-	this.resource('add');
-	this.resource('view');
-});
-
-App.AddRoute = Ember.Route.extend({
-	model: function() {
-      return Ember.RSVP.hash({ // RSVP.hash lets me have multiple models in one router http://stackoverflow.com/questions/20521967/emberjs-how-to-load-multiple-models-on-the-same-route
-          presetItems: itemLibrary,
-          userItems: userLibrary
-      });
-    }
-});
-
-App.AddController = Ember.ObjectController.extend({
-	actions: {
-		// add the clicked item to userLibrary JSON object
-		addToList: function(){
-			var value = this.get('itemName');	// gets text input value
-			userLibrary.push({
-				name: value
-			});	// adds it to JSON Object
-			console.log(userLibrary);
-		}
-	}
-});
-
-// this is how you do basic event delegation :: http://emberjs.com/guides/views/handling-events/
-App.ClickableView = Ember.View.extend({
-	click: function(evt) {
-		var itemName = evt.target.innerHTML;
-		userLibrary.push({
-			name: itemName
-		});
-		console.log(userLibrary);
-	}
-});
-
-// take a look at the View extend in source

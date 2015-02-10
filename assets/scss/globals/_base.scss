@@ -4,7 +4,6 @@ body {
 	font-weight: $normal;
 	font-size: 20px;
 	color: $color-tertiary;
-	background-color: #f00;
 	letter-spacing: 1px;
 }
 
@@ -49,9 +48,11 @@ ul {
 
 // could be a div or ul
 .list {
+	@include clearfix;
 	font-family: $font-family;
 	font-size: 1.5em;
 	text-transform: capitalize;
+	margin-bottom: 1em;
 
 	.item {
 		@extend .shadow;
@@ -81,5 +82,11 @@ ul {
 			color: $global-hover-color;
 			background-color: $global-hover-background-color;
 		}
+	}
+}
+
+.user-list {
+	.add-item-button {
+		background-color: $color-quinary;
 	}
 }

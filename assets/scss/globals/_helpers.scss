@@ -7,6 +7,7 @@
 	background: -ms-linear-gradient(top, $color-primary 0%,$color-secondary 100%); /* IE10+ */
 	background: linear-gradient(to bottom, $color-primary 0%,$color-secondary 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color-primary', endColorstr='$color-secondary',GradientType=0 ); /* IE6-9 */
+	background-attachment: fixed;
 }
 
 .shadow {

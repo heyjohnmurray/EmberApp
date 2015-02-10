@@ -111,9 +111,23 @@
 			<section>
 				<div class="row">
 					<div class="column small-12 medium-9 medium-centered">
-						{{#each userItems}}
-							{{name}}
-						{{/each}}
+						<div class="list user-list">
+								{{#each userItems}}
+									<div class="column small-8 medium-9 no-padding-left no-padding-right">
+										{{#view App.ReRenderUserList}}
+											<div class="item">{{name}}</div>
+										{{/view}}
+									</div>
+									<!-- /.column -->
+									<div class="column small-4 medium-3 no-padding-left no-padding-right">
+										<button class="add-item-button">
+											Details +
+										</button>
+									</div>
+									<!-- /.column -->
+								{{/each}}
+							</div>
+							<!-- /.list -->
 					</div>
 					<!-- /.column -->
 				</div>
@@ -123,29 +137,29 @@
 			<section>
 				<div class="row">
 					<div class="column small-12 medium-9 medium-centered large-5 large-push-2 large-uncentered">
-			    		<h2 class="headline">Need help adding items?</h2>
-			    	</div>
-			    	<div class="column small-12 medium-9 medium-centered large-5 large-push-1 large-uncentered">
-			    		<h4 class="subheadline">Choose a staple from the list below.</h4>
-			    	</div>
-		    		<!-- /.column -->
-		    	</div>
+						<h2 class="headline">Need help adding items?</h2>
+					</div>
+					<div class="column small-12 medium-9 medium-centered large-5 large-push-1 large-uncentered">
+						<h4 class="subheadline">Choose a staple from the list below.</h4>
+					</div>
+					<!-- /.column -->
+				</div>
 				<!-- /.row -->
-		    	<div class="row">
-		    		<div class="column small-12 medium-9 medium-centered">
-	    				<div class="row">
-	    					<div class="list item-library">
-				    			{{#each presetItems}}
-			    					<div class="column small-8 medium-9 no-padding-right">
-			    						{{#view App.ClickableView}}
+				<div class="row">
+					<div class="column small-12 medium-9 medium-centered">
+						<div class="row">
+							<div class="list item-library">
+								{{#each presetItems}}
+									<div class="column small-8 medium-9 no-padding-right">
+										{{#view App.ClickableView}}
 											<div class="item">{{name}}</div>
 										{{/view}}
-								    </div>
-								    <!-- /.column -->
+									</div>
+									<!-- /.column -->
 									<div class="column small-4 medium-3 no-padding-left">
-										<button {{action 'addToList'}} class="add-item-button">
-							    			Add +
-							    		</button>
+										<button class="add-item-button">
+											Add +
+										</button>
 									</div>
 									<!-- /.column -->
 								{{/each}}
@@ -153,19 +167,19 @@
 							<!-- /.list -->
 						</div>
 						<!-- /.row -->
-		    		</div>
-		    		<!-- /.column -->
-		    	</div>
-		    	<!-- /.row -->
-		    </section>
-	    </script>
-	    <!-- END add items template -->
+					</div>
+					<!-- /.column -->
+				</div>
+				<!-- /.row -->
+			</section>
+		</script>
+		<!-- END add items template -->
 
-	    <script type="text/x-handlebars" data-template-name="view">
-	    	{{partial "_masthead"}}
+		<script type="text/x-handlebars" data-template-name="view">
+			{{partial "_masthead"}}
 
-	    	<section>
-		    	<div class="row">
+			<section>
+				<div class="row">
 					<div class="column small-16">
 						<p>This is the view items section. This will have links to individual item pages. You will be able to add in advanced details about items on your list.</p>
 					</div>
@@ -174,7 +188,7 @@
 				<!-- /.row -->
 			</section>
 	    </script>
-	    <!-- END view items template -->
+		<!-- END view items template -->
 
 		<!-- dependencies -->
 		<script src="assets/js/libs/jquery-2.1.3.min.js"></script>

@@ -13,91 +13,53 @@ var itemLibrary = [
 	}
 ];
 
-var userLibrary = [];
+var userList = [];
 
 App = Ember.Application.create();
 
+////////////////////////////
+// main router
+//////////////////////////// 
 App.Router.map(function(){
 	this.resource('add');
 	this.resource('view');
+	this.resource('product-details', {path: '/product-details/:name'});
 });
 
+//////////////////////////// 
+// 'add' template code
+//////////////////////////// 
 App.AddRoute = Ember.Route.extend({
 	model: function() {
 		return Ember.RSVP.hash({ // RSVP.hash lets me have multiple models in one router http://stackoverflow.com/questions/20521967/emberjs-how-to-load-multiple-models-on-the-same-route
-		presetItems: itemLibrary,
-		userItems: userLibrary,
-			detailsLink: function(params){
-				return add.findBy('id', params.post_id);
-			}
+			presetItems: itemLibrary,
+			userItems: userList
 		});
     }
 });
 
 App.AddController = Ember.ObjectController.extend({
 	actions: {
-		// add the clicked item to userLibrary JSON object
+		/////////////////////// add the clicked item to userList JSON object
 		addToList: function(){
 			var value = this.get('itemName');	// gets text input value
-			userLibrary.pushObject({
-				name: value // this is just echoing and not adding my new items from the form.
-			});	// adds it to JSON Object
-			console.log(userLibrary);
+			userList.pushObject({
+				name: value
+			});
+			console.log('fuck');
+			return userList.reverseObjects();	// list newest item first
 		}
 	}
 });
 
-App.ReRenderUserList = Ember.View.extend({
-	submit: function(){
-		this.get('userLibrary').pushObject({name : value});
-	}
-});
-
+/////////////////////// add preset items to user list on click
 // this is how you do basic event delegation :: http://emberjs.com/guides/views/handling-events/
 App.ClickableView = Ember.View.extend({
 	click: function(evt) {
 		var itemName = evt.target.innerHTML;
-		userLibrary.pushObject({
+		userList.pushObject({
 			name: itemName
 		});
-		console.log(userLibrary);
+		return userList.reverseObjects();	// list newest item first
 	}
 });
-
-// take a look at the View extend in source
-
-/*
-	MVC basics
-
-	http://addyosmani.com/blog/understanding-mvc-and-mvp-for-javascript-and-backbone-developers/
-	http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller
-
-	M 	= MODEL	(data like JSON files or database code)	
-		= Models manage the data for an application.
-
-	V 	= VIEW 	(user interface code)	
-		= Views are a visual representation of models that present a filtered view of their current state. 
-
-	C 	= CONTROLLER
-		= Controllers are an intermediary between models and views which are classically responsible 
-		for two tasks: they both update the view when the model changes and update the model when the user 
-		manipulates the view.
-
-	Templating:
-
-	JavaScript templating solutions (such as Handlebars.js and Mustache) are often used to define templates for views 
-	as markup (either stored externally or within script tags with a custom type – e.g text/template) 
-	containing template variables.
-
-	MVC flow:
-
-	Model updates View
-	View sees User
-	User uses Controller
-	Controller manipulates Model
-
-	Routes:
-
-	Assist in managing application state (e.g allowing users to bookmark a particular view they have navigated to). 
-	Routers are neither a part of MVC nor present in every MVC-like framework.
-*/

@@ -114,15 +114,13 @@
 						<div class="list user-list">
 								{{#each userItems}}
 									<div class="column small-8 medium-9 no-padding-left no-padding-right">
-										{{#view App.ReRenderUserList}}
-											<div class="item">{{name}}</div>
-										{{/view}}
+										<div class="item">{{name}}</div>
 									</div>
 									<!-- /.column -->
 									<div class="column small-4 medium-3 no-padding-left no-padding-right">
-										<button class="add-item-button">
+										{{#link-to 'product-details' class="add-item-button"}}
 											Details +
-										</button>
+										{{/link-to}}
 									</div>
 									<!-- /.column -->
 								{{/each}}
@@ -174,6 +172,10 @@
 			</section>
 		</script>
 		<!-- END add items template -->
+
+		<script type="text/x-handlebars" data-template-name="product-details">
+			Product details
+		</script>
 
 		<script type="text/x-handlebars" data-template-name="view">
 			{{partial "_masthead"}}

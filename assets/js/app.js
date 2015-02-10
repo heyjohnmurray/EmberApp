@@ -23,7 +23,7 @@ App = Ember.Application.create();
 App.Router.map(function(){
 	this.resource('add');
 	this.resource('view');
-	this.resource('product-details', {path: '/product-details/:name'});
+	this.resource('details', {path: '/details/:name'});
 });
 
 //////////////////////////// 
@@ -60,5 +60,11 @@ App.ClickableView = Ember.View.extend({
 			name: itemName
 		});
 		return userList;	// list newest item first add .reverseObjects(), but figure out why it's not perfect
+	}
+});
+
+App.DetailsRoute = Ember.Route.extend({
+	model: function(params) {
+		return this.store.find('details', params.name);
 	}
 });

@@ -46,8 +46,7 @@ App.AddController = Ember.ObjectController.extend({
 			userList.pushObject({
 				name: value
 			});
-			console.log('fuck');
-			return userList.reverseObjects();	// list newest item first
+			return userList;	// list newest item first add .reverseObjects(), but figure out why it's not perfect
 		}
 	}
 });
@@ -60,6 +59,6 @@ App.ClickableView = Ember.View.extend({
 		userList.pushObject({
 			name: itemName
 		});
-		return userList.reverseObjects();	// list newest item first
+		return userList;	// list newest item first add .reverseObjects(), but figure out why it's not perfect
 	}
 });

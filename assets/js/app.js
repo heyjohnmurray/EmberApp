@@ -18,6 +18,10 @@ var itemLibrary = [
 
 var userList = [];
 
+////////////////////////////
+// create application
+//////////////////////////// 
+
 App = Ember.Application.create();
 
 ////////////////////////////
@@ -54,7 +58,9 @@ App.AddController = Ember.ObjectController.extend({
 	}
 });
 
-/////////////////////// add preset items to user list on click
+////////////////////////////////////////////////////////////////////// 
+// 'presetItems' click function :: extend view to make div clickable
+//////////////////////////////////////////////////////////////////////
 // event delegation :: http://emberjs.com/guides/views/handling-events/
 App.ClickableView = Ember.View.extend({
 	click: function(evt) {

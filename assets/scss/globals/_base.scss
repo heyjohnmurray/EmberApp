@@ -16,19 +16,10 @@ body {
 	margin: 0 0 1em 0;
 }
 
-button {
-	@include hover-transition(background-color);
-	width: 100%;
-	border: none;
-	text-transform: uppercase;
-	outline: none;
-}
-
 a {
 	@include hover-transition(background-color);
 	color: $color-tertiary;
 	text-decoration: none;
-	text-transform: uppercase;
 
 	&:hover {
 		color: $global-hover-color;
@@ -52,7 +43,6 @@ ul {
 	font-family: $font-family;
 	font-size: 1.5em;
 	text-transform: capitalize;
-	margin-bottom: 1em;
 
 	.item {
 		@extend .shadow;

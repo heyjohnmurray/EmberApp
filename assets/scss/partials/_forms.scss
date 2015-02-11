@@ -1,6 +1,6 @@
 form {
 	@include clearfix;
-	padding: 1em 0;
+	padding: 1.5em 0;
 }
 
 input {
@@ -30,7 +30,6 @@ input {
 		color: $white;
 		font-size: 30px;
 		background-color: $color-tertiary;
-		text-transform: uppercase;
 
 		&:hover {
 			color: $global-hover-color;

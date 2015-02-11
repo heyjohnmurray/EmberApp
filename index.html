@@ -25,11 +25,11 @@
 		<script type="text/x-handlebars" data-template-name="_indexNav">
 			<section>
 				<div class="row">
-					<div class="small-10 small-offset-1 medium-6 medium-offset-3 medium-centered large-4 large-offset-4 columns">
+					<div class="column small-10 small-offset-1 medium-6 medium-offset-3 medium-centered large-4 large-offset-4">
 						<nav>
 							<ul>
 								<li class="left">
-									{{#link-to 'addItem'}}
+									{{#link-to 'addItems'}}
 										<div class="controls is-round">
 											+
 										</div>
@@ -39,7 +39,7 @@
 									{{/link-to}}
 								</li>
 								<li class="right">
-									{{#link-to 'viewItem'}}
+									{{#link-to 'viewItems'}}
 										<div class="controls is-round">
 											<img src="assets/images/icons/icon-magnifying-glass.png" width="75" height="75" alt="">
 										</div>
@@ -58,6 +58,32 @@
 		</script>
 		<!-- END index nav -->
 
+		<script type="text/x-handlebars" data-template-name="_addItemsButton">
+			<div class="row">
+				<div class="column small-12 medium-9 medium-centered">
+					<p class="text-center">
+						{{#link-to 'addItems' class="button basic"}}Add New Items{{/link-to}}
+					</p>
+					{{!-- MAKE THIS CONDITIONAL AS WELL --}}
+				</div>
+				<!-- /.column -->
+			</div>
+			<!-- /.row -->
+		</script>
+
+		<script type="text/x-handlebars" data-template-name="_viewItemsButton">
+			<div class="row">
+				<div class="column small-12 medium-9 medium-centered">
+					<p class="text-center">
+						{{#link-to 'viewItems' class="button basic"}}View My Saved Items{{/link-to}}
+					</p>
+					{{!-- MAKE THIS CONDITIONAL AS WELL --}}
+				</div>
+				<!-- /.column -->
+			</div>
+			<!-- /.row -->
+		</script>
+
 		<script type="text/x-handlebars" data-template-name="index">
 
 			{{partial "_masthead"}} 
@@ -67,7 +93,7 @@
 		</script>
 		<!-- END index template -->
 
-		<script type="text/x-handlebars" data-template-name="addItem">
+		<script type="text/x-handlebars" data-template-name="addItems">
 
 			{{partial "_masthead"}}
 
@@ -80,7 +106,7 @@
 									{{input type="text" value=itemName class='js-input-add-item'}}
 								</div>
 								<div class="column small-4 medium-3 no-padding-left">
-									{{input type="submit" value="Add +"}}
+									{{input type="submit" value="Add +" class="button"}}
 									{{!-- clicking on this should add it to the page and let you keep writing --}}
 								</div>
 							</div>
@@ -96,26 +122,29 @@
 				<div class="row">
 					<div class="column small-12 medium-9 medium-centered">
 						<div class="list user-list">
-								{{#each userItems}}
-									{{#link-to 'itemDetails' name }}
-										<div class="column small-8 medium-9 no-padding-left no-padding-right">
-											<div class="item">{{name}}</div>
-										</div>
-										<!-- /.column -->
-										<div class="column small-4 medium-3 no-padding-left no-padding-right">
-											<div class="add-item-button">
-												Details +
-											</div>
-										</div>
-									{{/link-to}}
+							{{#each userItems}}
+								{{#link-to 'itemDetails' name }}
+									<div class="column small-8 medium-9 no-padding-left no-padding-right">
+										<div class="item">{{name}}</div>
+									</div>
 									<!-- /.column -->
-								{{/each}}
-							</div>
-							<!-- /.list -->
+									<div class="column small-4 medium-3 no-padding-left no-padding-right">
+										<div class="button add-item-button">
+											Details +
+										</div>
+									</div>
+								{{/link-to}}
+								<!-- /.column -->
+							{{/each}}
+						</div>
+						<!-- /.list -->
 					</div>
 					<!-- /.column -->
 				</div>
 				<!-- /.row -->
+				
+				{{partial "_viewItemsButton"}}
+
 			</section>
 
 			<section>
@@ -141,7 +170,7 @@
 									</div>
 									<!-- /.column -->
 									<div class="column small-4 medium-3 no-padding-left">
-										<button class="add-item-button">
+										<button class="button add-item-button">
 											Add +
 										</button>
 									</div>
@@ -171,21 +200,54 @@
 					<!-- /.column -->
 				</div>
 				<!-- /.row -->
+
+				{{partial "_viewItemsButton"}}
+
 			</section>
 
 		</script>
 
-		<script type="text/x-handlebars" data-template-name="viewItem">
+		<script type="text/x-handlebars" data-template-name="viewItems">
+
 			{{partial "_masthead"}}
 
-			<section>
+			<section class="viewItems">
 				<div class="row">
-					<div class="column small-16">
-						<p>This is the view items section. This will have links to individual item pages. You will be able to add in advanced details about items on your list.</p>
+					<div class="column small-12 medium-9 medium-centered">
+						<div class="list view-items-list">
+							{{#each model}}
+								{{#if name}}
+									{{#link-to 'itemDetails' name}}
+										<div class="column small-8 medium-9 no-padding-left no-padding-right">
+											<div class="item">{{name}}</div>
+										</div>
+										<!-- /.column -->
+										<div class="column small-4 medium-3 no-padding-left no-padding-right">
+											<div class="button add-item-button">
+												Details +
+											</div>
+										</div>
+									{{/link-to}}
+								{{else}} {{!-- THIS ERROR MESSAGE DOES NOT SHOW UP RIGHT--}}
+									<div class="row">
+										<div class="column small-9 small-centered">
+											<p class="text-center">Your list is empty right now.</p>
+											<p class="text-center">{{#link-to 'addItems' class="button basic"}}Want to start adding items?{{/link-to}}</p>
+										</div>
+										<!-- /.column -->
+									</div>
+									<!-- /.row -->
+								{{/if}}
+							{{/each}}
+						</div>
+						<!-- /.list -->
 					</div>
 					<!-- /.column-16 -->
 				</div>
 				<!-- /.row -->
+
+				{{partial "_addItemsButton"}}
+
 			</section>
 	    </script>
 		<!-- END view items template -->

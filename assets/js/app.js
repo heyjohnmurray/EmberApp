@@ -47,7 +47,7 @@ App.AddRoute = Ember.Route.extend({
 
 App.AddController = Ember.ObjectController.extend({
 	actions: {
-		/////////////////////// add the clicked item to userList JSON object
+		// item entry form submit
 		inputSubmit: function(){
 			var value = this.get('itemName');	// gets text input value
 			userList.pushObject({

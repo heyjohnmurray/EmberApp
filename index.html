@@ -64,7 +64,6 @@
 					<p class="text-center">
 						{{#link-to 'addItems' class="button basic"}}Add New Items{{/link-to}}
 					</p>
-					{{!-- MAKE THIS CONDITIONAL AS WELL --}}
 				</div>
 				<!-- /.column -->
 			</div>
@@ -77,7 +76,6 @@
 					<p class="text-center">
 						{{#link-to 'viewItems' class="button basic"}}View My Saved Items{{/link-to}}
 					</p>
-					{{!-- MAKE THIS CONDITIONAL AS WELL --}}
 				</div>
 				<!-- /.column -->
 			</div>
@@ -97,7 +95,7 @@
 
 			{{partial "_masthead"}}
 
-			<section>
+			<section class="add-items">
 				<div class="row">
 					<div class="column small-12 medium-9 medium-centered">
 						<form {{action "inputSubmit" on="submit"}}>
@@ -142,12 +140,9 @@
 					<!-- /.column -->
 				</div>
 				<!-- /.row -->
-				
-				{{partial "_viewItemsButton"}}
-
 			</section>
 
-			<section>
+			<section class="preset-items">
 				<div class="row">
 					<div class="column small-12 medium-9 medium-centered large-5 large-push-2 large-uncentered">
 						<h2 class="headline">Need help adding items?</h2>
@@ -192,10 +187,10 @@
 			
 			{{partial "_masthead"}}
 
-			<section>
+			<section class="item-details">
 				<div class="row">
 					<div class="column small-12 medium-9 medium-centered">
-						Product details	
+						This should be a form that lets you add information about each product
 					</div>
 					<!-- /.column -->
 				</div>
@@ -211,7 +206,7 @@
 
 			{{partial "_masthead"}}
 
-			<section class="viewItems">
+			<section class="view-items">
 				<div class="row">
 					<div class="column small-12 medium-9 medium-centered">
 						<div class="list view-items-list">

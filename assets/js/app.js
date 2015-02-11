@@ -75,8 +75,15 @@ App.ClickableView = Ember.View.extend({
 	}
 });
 
+// this just outputs the list on the 'viewItems' page
 App.ViewItemsRoute = Ember.Route.extend({
 	model: function(){
 	  	return userList;
 	}
 });
+
+// App.DetailsRoute = Ember.Route.extend({ // this should return more than just the name but this is a start
+//     model: function(params) {
+//         return userList.findBy('name', params.itemName); // assuming you want to find the details by it's name
+//     }
+// });

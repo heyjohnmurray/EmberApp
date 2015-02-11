@@ -74,7 +74,7 @@
 			<section>
 				<div class="row">
 					<div class="column small-12 medium-9 medium-centered">
-						<form {{action "addToList" on="submit"}}>
+						<form {{action "inputSubmit" on="submit"}}>
 							<div class="row">
 								<div class="column small-8 medium-9 no-padding-right">
 									{{input type="text" value=itemName}}
@@ -97,15 +97,17 @@
 					<div class="column small-12 medium-9 medium-centered">
 						<div class="list user-list">
 								{{#each userItems}}
-									<div class="column small-8 medium-9 no-padding-left no-padding-right">
-										<div class="item">{{name}}</div>
-									</div>
-									<!-- /.column -->
-									<div class="column small-4 medium-3 no-padding-left no-padding-right">
-										{{#link-to 'details' name class="add-item-button"}}
-											Details +
-										{{/link-to}}
-									</div>
+									{{#link-to 'details' name }}
+										<div class="column small-8 medium-9 no-padding-left no-padding-right">
+											<div class="item">{{name}}</div>
+										</div>
+										<!-- /.column -->
+										<div class="column small-4 medium-3 no-padding-left no-padding-right">
+											<div class="add-item-button">
+												Details +
+											</div>
+										</div>
+									{{/link-to}}
 									<!-- /.column -->
 								{{/each}}
 							</div>

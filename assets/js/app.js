@@ -1,3 +1,6 @@
+////////////////////////////
+//	JSON objects
+////////////////////////////
 var itemLibrary = [
 	{
 		'name' : 'bread'
@@ -41,7 +44,7 @@ App.AddRoute = Ember.Route.extend({
 App.AddController = Ember.ObjectController.extend({
 	actions: {
 		/////////////////////// add the clicked item to userList JSON object
-		addToList: function(){
+		inputSubmit: function(){
 			var value = this.get('itemName');	// gets text input value
 			userList.pushObject({
 				name: value
@@ -52,7 +55,7 @@ App.AddController = Ember.ObjectController.extend({
 });
 
 /////////////////////// add preset items to user list on click
-// this is how you do basic event delegation :: http://emberjs.com/guides/views/handling-events/
+// event delegation :: http://emberjs.com/guides/views/handling-events/
 App.ClickableView = Ember.View.extend({
 	click: function(evt) {
 		var itemName = evt.target.innerHTML;

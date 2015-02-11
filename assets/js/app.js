@@ -30,7 +30,9 @@ App = Ember.Application.create();
 App.Router.map(function(){
 	this.resource('addItems');
 	this.resource('viewItems');
-	this.resource('itemDetails', {path: '/details/:itemName'});
+	this.resource('itemDetails', {path: '/details/:itemName'}, function(){
+	  	this.route('addInfo');
+	});
 });
 
 	// Notes: as long as you have a resource mapped, you can't 'link-to' it

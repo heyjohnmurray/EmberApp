@@ -189,14 +189,22 @@
 
 			<section class="item-details">
 				<div class="row">
-					<div class="column small-12 medium-9 medium-centered">
-						This should be a form that lets you add information about each product
+					<div class="column small-8 small-centered">
+						<div class="row">
+							<div class="column small-6">
+								{{#link-to 'itemDetails.addInfo' class='button basic'}}Add Item Info + {{/link-to}}
+							</div>
+							<!-- /.column -->
+							<div class="column small-6">
+								{{#link-to 'viewItems' class="button basic"}}View My Saved Items{{/link-to}}
+							</div>
+							<!-- /.column -->
+						</div>
+						<!-- /.row -->
 					</div>
 					<!-- /.column -->
 				</div>
 				<!-- /.row -->
-
-				{{partial "_viewItemsButton"}}
 
 			</section>
 

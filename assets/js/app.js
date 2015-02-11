@@ -28,15 +28,15 @@ App = Ember.Application.create();
 // main router
 //////////////////////////// 
 App.Router.map(function(){
-	this.resource('add');
-	this.resource('view');
-	this.resource('details', {path: '/details/:itemName'});
+	this.resource('addItem');
+	this.resource('viewItem');
+	this.resource('itemDetails', {path: '/details/:itemName'});
 });
 
 //////////////////////////// 
 // 'add' template code
 //////////////////////////// 
-App.AddRoute = Ember.Route.extend({
+App.AddItemRoute = Ember.Route.extend({
 	model: function() {
 		return Ember.RSVP.hash({ // RSVP.hash lets me have multiple models in one router http://stackoverflow.com/questions/20521967/emberjs-how-to-load-multiple-models-on-the-same-route
 			presetItems: itemLibrary,
@@ -45,7 +45,7 @@ App.AddRoute = Ember.Route.extend({
     }
 });
 
-App.AddController = Ember.ObjectController.extend({
+App.AddItemController = Ember.ObjectController.extend({
 	actions: {
 		// item entry form submit
 		inputSubmit: function(){

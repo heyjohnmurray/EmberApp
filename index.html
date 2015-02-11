@@ -29,7 +29,7 @@
 						<nav>
 							<ul>
 								<li class="left">
-									{{#link-to 'add'}}
+									{{#link-to 'addItem'}}
 										<div class="controls is-round">
 											+
 										</div>
@@ -39,7 +39,7 @@
 									{{/link-to}}
 								</li>
 								<li class="right">
-									{{#link-to 'view'}}
+									{{#link-to 'viewItem'}}
 										<div class="controls is-round">
 											<img src="assets/images/icons/icon-magnifying-glass.png" width="75" height="75" alt="">
 										</div>
@@ -67,7 +67,7 @@
 		</script>
 		<!-- END index template -->
 
-		<script type="text/x-handlebars" data-template-name="add">
+		<script type="text/x-handlebars" data-template-name="addItem">
 
 			{{partial "_masthead"}}
 
@@ -97,7 +97,7 @@
 					<div class="column small-12 medium-9 medium-centered">
 						<div class="list user-list">
 								{{#each userItems}}
-									{{#link-to 'details' name }}
+									{{#link-to 'itemDetails' name }}
 										<div class="column small-8 medium-9 no-padding-left no-padding-right">
 											<div class="item">{{name}}</div>
 										</div>
@@ -159,7 +159,7 @@
 		</script>
 		<!-- END add items template -->
 
-		<script type="text/x-handlebars" data-template-name="details">
+		<script type="text/x-handlebars" data-template-name="itemDetails">
 			
 			{{partial "_masthead"}}
 
@@ -175,7 +175,7 @@
 
 		</script>
 
-		<script type="text/x-handlebars" data-template-name="view">
+		<script type="text/x-handlebars" data-template-name="viewItem">
 			{{partial "_masthead"}}
 
 			<section>

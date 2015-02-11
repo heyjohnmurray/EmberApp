@@ -53,6 +53,7 @@ App.AddController = Ember.ObjectController.extend({
 			userList.pushObject({
 				name: value
 			});
+			document.querySelector('.js-input-add-item').value = ''; // clear input on submit
 			return userList;	// list newest item first add .reverseObjects(), but figure out why it's not perfect
 		}
 	}

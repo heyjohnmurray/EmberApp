@@ -7,7 +7,7 @@
 }
 
 nav {
-	margin-top: 30px;
+	margin-top: 1em;
 
 	li {
 		display: inline-block;
@@ -19,12 +19,12 @@ nav {
 	$dimensions: 115px;
 	width: $dimensions;
 	height: $dimensions;
-	line-height: 115px;
+	line-height: $dimensions;
 	margin: 5px 5px 20px 5px;
 	background-color: $color-quarternary;
 	text-align: center;
 	font-family: Arial;
-	font-size: 800%;
+	font-size: 8em;
 	font-weight: bold;
 	
 
@@ -33,13 +33,13 @@ nav {
 	}
 
 	&:hover {
-		font-size: 850%;
+		font-size: 8.5em;
 	}
 
 	+ div {
 		text-align: center;
 		text-transform: uppercase;
-		font-size: 120%;
+		font-size: 1.2em;
 	}
 
 	img {
@@ -52,7 +52,7 @@ nav {
 	@extend .extend-animation;
 
 	&:hover {
-		font-size: 120%;
+		font-size: 1.2em;
 	}
 }
 

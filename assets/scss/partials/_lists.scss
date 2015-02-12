@@ -1,0 +1,43 @@
+.list {
+	@include clearfix;
+	font-family: $font-family;
+	font-size: 1.5em;
+	text-transform: capitalize;
+	margin: .5em 0;
+
+	.item {
+		@extend .shadow;
+		display: block;
+		text-align: left;
+		margin-bottom: .25em;
+		padding: .5em 1em;
+		color: $color-tertiary;
+		background-color: $off-white;
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+
+	.add-item-button { // target a class instead of <a> tag in for modularity
+		@extend .shadow;
+		display: block;
+		padding: .77em;
+		font-size: .65em;
+		font-weight: $bold;
+		color: $color-tertiary;
+		text-align: center;
+		background-color: $color-primary;
+
+		&:hover {
+			color: $global-hover-color;
+			background-color: $global-hover-background-color;
+		}
+	}
+}
+
+.user-list {
+	.add-item-button {
+		background-color: $color-quinary;
+	}
+}

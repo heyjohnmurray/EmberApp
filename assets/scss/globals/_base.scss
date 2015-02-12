@@ -2,9 +2,30 @@ body {
 	@extend .base-gradient;
 	font-family: $font-family;
 	font-weight: $normal;
-	font-size: 20px;
+	font-size: $global-base-font;
 	color: $color-tertiary;
 	letter-spacing: 1px;
+}
+
+h1 {
+	font-size: 1.5em;
+	font-weight: $normal;
+
+	@media #{$medium-up} {
+		font-size: 1.75em;
+	}
+
+	@media #{$large-up} {
+		font-size: 2em;
+	}
+
+	@media #{$xlarge-up} {
+		font-size: 2.25em;
+	}
+
+	@media #{$xxlarge-up} {
+		font-size: 2.5em;
+	}
 }
 
 .headline {
@@ -34,49 +55,5 @@ ul {
 
 	li {
 		display: inline-block;
-	}
-}
-
-// could be a div or ul
-.list {
-	@include clearfix;
-	font-family: $font-family;
-	font-size: 1.5em;
-	text-transform: capitalize;
-
-	.item {
-		@extend .shadow;
-		display: block;
-		text-align: left;
-		margin-bottom: .25em;
-		padding: .5em 1em;
-		color: $color-tertiary;
-		background-color: $off-white;
-
-		&:hover {
-			cursor: pointer;
-		}
-	}
-
-	.add-item-button { // target a class instead of <a> tag in for modularity
-		@extend .shadow;
-		display: block;
-		padding: .77em;
-		font-size: .65em;
-		font-weight: $bold;
-		color: $color-tertiary;
-		text-align: center;
-		background-color: $color-primary;
-
-		&:hover {
-			color: $global-hover-color;
-			background-color: $global-hover-background-color;
-		}
-	}
-}
-
-.user-list {
-	.add-item-button {
-		background-color: $color-quinary;
 	}
 }

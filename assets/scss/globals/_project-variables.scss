@@ -1,4 +1,6 @@
-// color names generated from :: http://chir.ag/projects/name-that-color/
+////////////////////
+//// COLORS :: color names generated from :: http://chir.ag/projects/name-that-color/
+////////////////////
 $light-green: #a0f4a0;
 $bright-turquoise: #11ead7;
 $turquoise: #4adcb1;
@@ -17,11 +19,18 @@ $color-quarternary: $turquoise;
 $color-quinary: $downy;
 $highlight: $violet;
 
+////////////////////
+//// GLOBALS
+////////////////////
+$global-base-font: 20px;
 $global-hover-color: $white;
 $global-hover-background-color: $highlight;
 $global-border-shadow-color: $turquoise;
 $global-focus-color: $highlight;
 
+////////////////////
+//// FONTS
+////////////////////
 $font-family: 'Dosis', Arial, sans-serif;
 $normal: 400;
 $bold: 700;

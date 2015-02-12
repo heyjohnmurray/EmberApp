@@ -9,8 +9,15 @@ button,
 
 .button {
 	&.basic {
+		@include hover-transition(background-color);
 		display: block;
+		font-weight: bold;
 		padding: 20px;
+		text-align: center;
 		background-color: $color-quarternary;
+
+		&:hover {
+			background-color: $global-hover-background-color;
+		}
 	}
 }

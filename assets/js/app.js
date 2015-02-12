@@ -30,7 +30,7 @@ App = Ember.Application.create();
 App.Router.map(function(){
 	this.resource('addItems');
 	this.resource('viewItems');
-	this.resource('itemDetails', {path: '/details/:itemName'}, function(){
+	this.resource('itemDetails', {path: '/details/:itemName'}, function(){ // the dynamic segment name doesn't seem to be tied to the param named passed to it from the template
 	  	this.route('addInfo');
 	});
 });
@@ -58,7 +58,7 @@ App.AddItemsController = Ember.ObjectController.extend({
 				name: value
 			});
 			document.querySelector('.js-input-add-item').value = ''; // clear input on submit
-			return userList;	// list newest item first add .reverseObjects(), but figure out why it's not perfect
+			return userList.slice().reverseObjects();	// list newest item first add .reverseObjects(), but figure out why it's not perfect
 		}
 	}
 });
@@ -73,7 +73,7 @@ App.ClickableView = Ember.View.extend({
 		userList.pushObject({
 			name: itemName
 		});
-		return userList;	// list newest item first add .reverseObjects(), but figure out why it's not perfect
+		return userList;
 	}
 });
 

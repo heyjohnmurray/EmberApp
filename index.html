@@ -62,7 +62,7 @@
 			<div class="row">
 				<div class="column small-12 medium-9 medium-centered">
 					<p class="text-center">
-						{{#link-to 'addItems' class="button basic"}}Add New Items{{/link-to}}
+						{{#link-to 'addItems' class="button basic"}}Add New Items +{{/link-to}}
 					</p>
 				</div>
 				<!-- /.column -->
@@ -74,7 +74,7 @@
 			<div class="row">
 				<div class="column small-12 medium-9 medium-centered">
 					<p class="text-center">
-						{{#link-to 'viewItems' class="button basic"}}View My Saved Items{{/link-to}}
+						{{#link-to 'viewItems' class="button basic"}}View My Saved Items +{{/link-to}}
 					</p>
 				</div>
 				<!-- /.column -->
@@ -105,7 +105,6 @@
 								</div>
 								<div class="column small-4 medium-3 no-padding-left">
 									{{input type="submit" value="Add +" class="button"}}
-									{{!-- clicking on this should add it to the page and let you keep writing --}}
 								</div>
 							</div>
 							<!-- /.row -->
@@ -121,7 +120,7 @@
 					<div class="column small-12 medium-9 medium-centered">
 						<div class="list user-list">
 							{{#each userItems}}
-								{{#link-to 'itemDetails' name }}
+								{{#link-to 'itemDetails' name}}
 									<div class="column small-8 medium-9 no-padding-left no-padding-right">
 										<div class="item">{{name}}</div>
 									</div>
@@ -189,25 +188,39 @@
 
 			<section class="item-details">
 				<div class="row">
-					<div class="column small-8 small-centered">
-						<div class="row">
-							<div class="column small-6">
-								{{#link-to 'itemDetails.addInfo' class='button basic'}}Add Item Info + {{/link-to}}
+					<div class="column small-8 medium-9 medium-centered">
+						<h1 class="headline text-center">Add detailed information about {{itemName}}:</h1>
+						<form {{action "inputSubmit" on="submit"}}>
+							<div class="row">
+								<div class="column small-6">
+									{{itemName}}
+								</div>
+								<!-- /.column -->
+								<div class="column small-6">
+									{{input type="text" value=itemName class='js-input-add-item'}}
+								</div>
+								<!-- /.column -->
 							</div>
-							<!-- /.column -->
-							<div class="column small-6">
-								{{#link-to 'viewItems' class="button basic"}}View My Saved Items{{/link-to}}
-							</div>
-							<!-- /.column -->
-						</div>
-						<!-- /.row -->
+							<!-- /.row -->
+						</form>
 					</div>
 					<!-- /.column -->
 				</div>
 				<!-- /.row -->
-
+				{{outlet}}
 			</section>
+		</script>
 
+		<script type="text/x-handlebars" data-template-name="itemDetails/addInfo">
+			<section class="add-info">
+				<div class="row">
+					<div class="column small-8 medium-9 medium-centered">
+						this should be other info instead of the form
+					</div>
+					<!-- /. column -->
+				</div>
+				<!-- /.row column -->
+			</section>
 		</script>
 
 		<script type="text/x-handlebars" data-template-name="viewItems">

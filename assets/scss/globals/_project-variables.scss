@@ -27,6 +27,10 @@ $global-hover-color: $white;
 $global-hover-background-color: $highlight;
 $global-border-shadow-color: $turquoise;
 $global-focus-color: $highlight;
+$global-textarea-color: $color-tertiary;
+$global-textarea-background-color: $color-quarternary;
+$global-textarea-focus-color: $color-tertiary;
+$global-textarea-background-focus-color: darken($color-quarternary, 10%);
 
 ////////////////////
 //// FONTS

@@ -188,20 +188,44 @@
 
 			<section class="item-details">
 				<div class="row">
-					REDO THIS LAYOUT!
-					<div class="column small-12 medium-9 medium-centered">
+					<div class="column small-12 medium-8 medium-centered">
 						<h1 class="headline text-center">Add detailed information about <b>{{itemName}}</b>:</h1>
 						<form {{action "inputSubmit" on="submit"}}>
 							<div class="row">
-								<div class="column small-12 small-centered">
-									{{input type="text" value=itemQuantity class='js-input-add-item' placeholder="Quantity"}}
+								<div class="column small-6">
+									{{input type="text" value=itemQuantity placeholder="Quantity"}}
+								</div>
+								<!-- /.column -->
+								<div class="column small-6">
+									{{input type="text" value=itemContainerSize placeholder="Container Size"}}
 								</div>
 								<!-- /.column -->
 							</div>
 							<!-- /.row -->
 							<div class="row">
-								<div class="column small-12 medium-9">
-									{{textarea value=itemDescription class='js-input-add-item'}}
+								<div class="column small-12">
+									<label>Date Added</label>
+								</div>
+							</div>
+							<!-- /.row -->
+							<div class="row">
+								<!-- /.column -->
+								<div class="column small-12">
+									{{input type="date" value=itemDate placeholder="Date Added"}}
+								</div>
+								<!-- /.column -->
+							</div>
+							<!-- /.row -->
+							<div class="row">
+								<div class="column small-12">
+									{{textarea value=itemDescription placeholder="Description"}}
+								</div>
+								<!-- /.column -->
+							</div>
+							<!-- /.row -->
+							<div class="row">
+								<div class="column small-12 right">
+									{{input type="submit" value="Submit Details +" class="button"}}
 								</div>
 								<!-- /.column -->
 							</div>
@@ -212,19 +236,6 @@
 				</div>
 				<!-- /.row -->
 				{{outlet}}
-				{{!--
-					quantity
-					description
-					container size
-					date added
-					who uses the item more (for example Cheerios: John, Special K: Kenzie)
-
-					*click for advanced options*
-					weight watchers points
-					nutrition information (allow manual entry. future feature: consider nutrition lookup)
-					expiration date
-				--}}
-
 			</section>
 		</script>
 

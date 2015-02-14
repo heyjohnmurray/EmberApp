@@ -8,9 +8,12 @@
 	.item {
 		@extend .shadow;
 		display: block;
+		height: 2.2em;
 		text-align: left;
 		margin-bottom: .25em;
 		padding: .5em 1em;
+		white-space: nowrap;
+		overflow: hidden;
 		color: $color-tertiary;
 		background-color: $off-white;
 
@@ -22,10 +25,13 @@
 	.add-item-button { // target a class instead of <a> tag in for modularity
 		@extend .shadow;
 		display: block;
+		height: 3.4em;
 		padding: .77em;
 		font-size: .65em;
 		font-weight: $bold;
 		color: $color-tertiary;
+		white-space: nowrap;
+		overflow: hidden;
 		text-align: center;
 		background-color: $color-primary;
 

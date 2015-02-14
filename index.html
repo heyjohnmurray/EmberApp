@@ -168,19 +168,25 @@
 									{{!-- Look into turning these two clickable views into individual extended view elements.
 										http://emberjs.com/guides/views/customizing-a-views-element/ 										
 										http://emberjs.com/guides/views/customizing-a-views-element/#toc_attribute-bindings-on-a-view
+
+										http://emberjs.com/api/classes/Ember.View.html#toc_templates
 									--}}
 
 									<div class="column small-4 medium-3 no-padding-left">
-										{{#view App.ClickableView}}
+										
 
 									{{!--
 										find a way to make {{name}} an element attribute like a data attribute or something
 									--}}
 
-											<button class="button add-item-button">
-												Add +
-											</button>
+										{{!--<button class="button add-item-button">
+											Add +
+										</button>--}}
+
+										{{#view App.MyView}}
+											{{name}}
 										{{/view}}
+										
 									</div>
 									<!-- /.column -->
 								{{/each}}

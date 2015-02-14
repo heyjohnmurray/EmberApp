@@ -77,6 +77,27 @@ App.ClickableView = Ember.View.extend({
 	}
 });
 
+// App.MyView = Ember.View.extend({
+//   tagName: 'button',
+//   classNameBindings: ['add-item-button'],
+//   href: "http://emberjs.com",
+//   template: Ember.Handlebars.compile('I am the template')
+// });
+
+App.MyView = Ember.View.extend({
+	classNames: ['button, add-item-button'],
+	tagName: 'button',
+	attributeBindings: ['customHref:data'],
+  customHref: "http://emberjs.com",
+	click: function (evt) {
+		var itemName = evt.target.innerHTML;
+		userList.pushObject({
+			name: itemName
+		});
+		return userList;
+	}
+});
+
 // this just outputs the list on the 'viewItems' page
 App.ViewItemsRoute = Ember.Route.extend({
 	model: function(){

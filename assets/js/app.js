@@ -88,7 +88,7 @@ App.MyView = Ember.View.extend({
 	classNames: ['button, add-item-button'],
 	tagName: 'button',
 	attributeBindings: ['customHref:data'],
-  customHref: "http://emberjs.com",
+	customHref: "http://emberjs.com",
 	click: function (evt) {
 		var itemName = evt.target.innerHTML;
 		userList.pushObject({

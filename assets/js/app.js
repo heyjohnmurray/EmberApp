@@ -31,7 +31,7 @@ App.Router.map(function(){
 	this.resource('addItems');
 	this.resource('viewItems');
 	this.resource('itemDetails', {path: '/details/:itemName'}, function(){ // the dynamic segment name doesn't seem to be tied to the param named passed to it from the template
-	  	this.route('addInfo');
+		this.route('addInfo');
 	});
 });
 
@@ -46,7 +46,7 @@ App.AddItemsRoute = Ember.Route.extend({
 			presetItems: itemLibrary,
 			userItems: userList
 		});
-    }
+	}
 });
 
 App.AddItemsController = Ember.ObjectController.extend({
@@ -67,29 +67,13 @@ App.AddItemsController = Ember.ObjectController.extend({
 // 'presetItems' click function :: extend view to make div clickable
 //////////////////////////////////////////////////////////////////////
 // event delegation :: http://emberjs.com/guides/views/handling-events/
+// Info on how to create custom views, view classes, view attributes, etc ...
+//		http://emberjs.com/guides/views/customizing-a-views-element/ 										
+//		http://emberjs.com/guides/views/customizing-a-views-element/#toc_attribute-bindings-on-a-view
+//		http://emberjs.com/api/classes/Ember.View.html#toc_templates
+
 App.ClickableView = Ember.View.extend({
 	click: function(evt) {
-		var itemName = evt.target.innerHTML;
-		userList.pushObject({
-			name: itemName
-		});
-		return userList;
-	}
-});
-
-// App.MyView = Ember.View.extend({
-//   tagName: 'button',
-//   classNameBindings: ['add-item-button'],
-//   href: "http://emberjs.com",
-//   template: Ember.Handlebars.compile('I am the template')
-// });
-
-App.MyView = Ember.View.extend({
-	classNames: ['button, add-item-button'],
-	tagName: 'button',
-	attributeBindings: ['customHref:data'],
-	customHref: "http://emberjs.com",
-	click: function (evt) {
 		var itemName = evt.target.innerHTML;
 		userList.pushObject({
 			name: itemName
@@ -101,7 +85,7 @@ App.MyView = Ember.View.extend({
 // this just outputs the list on the 'viewItems' page
 App.ViewItemsRoute = Ember.Route.extend({
 	model: function(){
-	  	return userList;
+		return userList;
 	}
 });
 
@@ -110,3 +94,25 @@ App.ViewItemsRoute = Ember.Route.extend({
 //         return userList.findBy('name', params.itemName); // assuming you want to find the details by it's name
 //     }
 // });
+
+App.ItemDetailsRoute = Ember.Route.extend({
+	actions: {
+		inputSubmit: function(){
+			var itemName = this.controller.get('itemName');
+			var itemQuantity = this.controller.get('itemQuantity');
+			var itemContainerSize = this.controller.get('itemContainerSize');
+			var itemDate = this.controller.get('itemDate');
+			var itemDescription = this.controller.get('itemDescription');
+
+			userList.pushObject({
+				name: itemName,
+				quantity: itemQuantity,
+				size: itemContainerSize,
+				date: itemDate,
+				description: itemDescription
+			});
+
+			console.log(userList);
+		}
+	}
+});

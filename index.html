@@ -157,36 +157,10 @@
 						<div class="row">
 							<div class="list item-library">
 								{{#each presetItems}}
-									<div class="column small-8 medium-9 no-padding-right">
+									<div class="column small-6 medium-3">
 										{{#view App.ClickableView}}
-											<div class="item">{{name}}</div>
+											<button class="button add-item-button">{{name}}</button>
 										{{/view}}
-									</div>
-									<!-- /.column -->
-
-
-									{{!-- Look into turning these two clickable views into individual extended view elements.
-										http://emberjs.com/guides/views/customizing-a-views-element/ 										
-										http://emberjs.com/guides/views/customizing-a-views-element/#toc_attribute-bindings-on-a-view
-
-										http://emberjs.com/api/classes/Ember.View.html#toc_templates
-									--}}
-
-									<div class="column small-4 medium-3 no-padding-left">
-										
-
-									{{!--
-										find a way to make {{name}} an element attribute like a data attribute or something
-									--}}
-
-										{{!--<button class="button add-item-button">
-											Add +
-										</button>--}}
-
-										{{#view App.MyView}}
-											{{name}}
-										{{/view}}
-										
 									</div>
 									<!-- /.column -->
 								{{/each}}
@@ -213,11 +187,11 @@
 						<form {{action "inputSubmit" on="submit"}}>
 							<div class="row">
 								<div class="column small-6">
-									{{input type="text" value=itemQuantity placeholder="Quantity"}}
+									{{input type="text" value=itemQuantity class="itemQuantity" placeholder="Quantity"}}
 								</div>
 								<!-- /.column -->
 								<div class="column small-6">
-									{{input type="text" value=itemContainerSize placeholder="Container Size"}}
+									{{input type="text" value=itemContainerSize class="itemContainerSize" placeholder="Container Size"}}
 								</div>
 								<!-- /.column -->
 							</div>
@@ -231,14 +205,14 @@
 							<div class="row">
 								<!-- /.column -->
 								<div class="column small-12">
-									{{input type="date" value=itemDate placeholder="Date Added"}}
+									{{input type="date" value=itemDate class="itemDate" placeholder="Date Added"}}
 								</div>
 								<!-- /.column -->
 							</div>
 							<!-- /.row -->
 							<div class="row">
 								<div class="column small-12">
-									{{textarea value=itemDescription placeholder="Description"}}
+									{{textarea value=itemDescription class="itemDescription" placeholder="Description"}}
 								</div>
 								<!-- /.column -->
 							</div>

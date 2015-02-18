@@ -17,7 +17,6 @@ var watch = require('gulp-watch');
 // sass
 var sass = require('gulp-sass');
 var bourbon = require('node-bourbon').includePaths;
-var minifyCSS = require('gulp-minify-css');
 
 // js
 var uglify = require('gulp-uglifyjs');
@@ -37,4 +36,10 @@ gulp.task('sass', function () {
         .pipe(gulp.dest('assets/css'));
 });
 
-gulp.task('default', ['sass']);
+gulp.task('js', function() { // only need to mess with app.js for now
+	gulp.src('assets/js/app.js')
+		.pipe(uglify('app.min.js'))
+		.pipe(gulp.dest('assets/js'));
+});
+
+gulp.task('default', ['sass','js']);

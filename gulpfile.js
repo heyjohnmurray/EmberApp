@@ -5,6 +5,7 @@
 		gulp-declare
 		gulp-handlebars
 		gulp-sass
+		gulp-sourcemaps
 		gulp-uglifyjs
 		gulp-watch
 		gulp-wrap
@@ -16,6 +17,7 @@ var watch = require('gulp-watch');
 
 // sass
 var sass = require('gulp-sass');
+var sourcemaps = require('gulp-sourcemaps');
 var bourbon = require('node-bourbon').includePaths;
 
 // js
@@ -29,10 +31,12 @@ var concat = require('gulp-concat');
 
 gulp.task('sass', function () {
     return gulp.src('assets/scss/*.scss')
+    	.pipe(sourcemaps.init())
         .pipe(sass({
             includePaths: ['sass'].concat(bourbon),
             outputStyle: 'compressed'
         }))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest('assets/css'));
 });
 

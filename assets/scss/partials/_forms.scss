@@ -101,11 +101,8 @@ textarea {
 	background-color: $global-textarea-background-color;
 
 	&:focus {
+		height: 7em;
 		color: $global-textarea-focus-color;
 		background-color: $global-textarea-background-focus-color;
-	}
-
-	&:hover {
-		height: 7em;
 	}
 }

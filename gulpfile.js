@@ -14,7 +14,6 @@
 
 var gulp = require('gulp');
 var watch = require('gulp-watch');
-var livereload = require('gulp-livereload');
 
 // sass
 var sass = require('gulp-sass');
@@ -39,18 +38,12 @@ gulp.task('sass', function () {
         }))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('assets/css'))
-        .pipe(livereload());
 });
 
 gulp.task('js', function() { // only need to mess with app.js for now
 	gulp.src('assets/js/app.js')
 		.pipe(uglify('app.min.js'))
 		.pipe(gulp.dest('assets/js'));
-});
-
-gulp.task('watch', function() {
-	livereload.listen();
-	gulp.watch('assets/sass/**/*.scss', ['sass']);
 });
 
 gulp.task('default', ['sass','js']);

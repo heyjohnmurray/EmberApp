@@ -112,6 +112,7 @@ App.ItemDetailsRoute = Ember.Route.extend({
 				description: itemDescription
 			});
 
+			// use transitionTo to have it go back to 'addItems' view/form
 			console.log(userList);
 		}
 	}

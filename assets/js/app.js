@@ -98,8 +98,6 @@ App.ItemDetailsRoute = Ember.Route.extend({
 			var itemDate = this.controller.get('itemDate');
 			var itemDescription = this.controller.get('itemDescription');
 
-			var matched = false;
-
 			for (var i in userList) {
 				// check userList to see if name already exists
 				if (userList[i].name == itemName) {
@@ -114,6 +112,12 @@ App.ItemDetailsRoute = Ember.Route.extend({
 					break; //Stop this loop, we found it!
 				}
 			}
+
+			// add in form submit confirmation functionality
+
+			//	OR ...
+
+			// add in transitionTo code that sends you to a page to view what you just submitted. put edit functionality on that page
 		}
 	}
 });

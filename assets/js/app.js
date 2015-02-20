@@ -58,7 +58,7 @@ App.AddItemsController = Ember.ObjectController.extend({
 				name: value
 			});
 			document.querySelector('.js-input-add-item').value = ''; // clear input on submit
-			return userList.slice().reverseObjects();	// list newest item first add .reverseObjects(), but figure out why it's not perfect
+			return userList;
 		}
 	}
 });
@@ -89,12 +89,6 @@ App.ViewItemsRoute = Ember.Route.extend({
 	}
 });
 
-// App.DetailsRoute = Ember.Route.extend({ // this should return more than just the name but this is a start
-//     model: function(params) {
-//         return userList.findBy('name', params.itemName); // assuming you want to find the details by it's name
-//     }
-// });
-
 App.ItemDetailsRoute = Ember.Route.extend({
 	actions: {
 		inputSubmit: function(){
@@ -104,16 +98,42 @@ App.ItemDetailsRoute = Ember.Route.extend({
 			var itemDate = this.controller.get('itemDate');
 			var itemDescription = this.controller.get('itemDescription');
 
-			userList.pushObject({
-				name: itemName,
-				quantity: itemQuantity,
-				size: itemContainerSize,
-				date: itemDate,
-				description: itemDescription
-			});
+			var matched = false;
 
-			// use transitionTo to have it go back to 'addItems' view/form
-			console.log(userList);
+			for (var i in userList) {
+				// check userList to see if name already exists
+				if (userList[i].name == itemName) {
+
+					userList[i].name = itemName;
+					userList[i].quantity = itemQuantity;
+					userList[i].size = itemContainerSize;
+					userList[i].date = itemDate;
+					userList[i].description = itemDescription;
+
+					console.log(userList);
+					break; //Stop this loop, we found it!
+				}
+			}
 		}
 	}
 });
+
+// userList.addMyItem = function (item) {
+// var matched = false;
+
+// for(var i = 0; i < this.items.length; i++) {
+// 	if (this.items[i].name === item.name) {
+// 		matched = true;
+		
+// 		// match, do an update
+
+// 		// replace our old item with the new one
+// 		this.items[i] = item;
+// 		}
+// 	}
+
+// 	if (!matched) {
+// 		// new item, add it
+// 		this.pushObject(item);
+// 	}
+// };

@@ -121,23 +121,3 @@ App.ItemDetailsRoute = Ember.Route.extend({
 		}
 	}
 });
-
-// userList.addMyItem = function (item) {
-// var matched = false;
-
-// for(var i = 0; i < this.items.length; i++) {
-// 	if (this.items[i].name === item.name) {
-// 		matched = true;
-		
-// 		// match, do an update
-
-// 		// replace our old item with the new one
-// 		this.items[i] = item;
-// 		}
-// 	}
-
-// 	if (!matched) {
-// 		// new item, add it
-// 		this.pushObject(item);
-// 	}
-// };

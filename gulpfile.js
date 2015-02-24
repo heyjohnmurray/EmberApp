@@ -37,7 +37,7 @@ gulp.task('sass', function () {
             outputStyle: 'compressed'
         }))
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest('assets/css'))
+        .pipe(gulp.dest('assets/css'));
 });
 
 gulp.task('js', function() { // only need to mess with app.js for now

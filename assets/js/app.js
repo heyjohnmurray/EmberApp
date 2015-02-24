@@ -33,6 +33,7 @@ App.Router.map(function(){
 	this.resource('itemDetails', {path: '/details/:itemName'}, function(){ // the dynamic segment name doesn't seem to be tied to the param named passed to it from the template
 		this.route('addInfo');
 	});
+	this.resource('fullDetails', {path: '/full-details/'}); // this dynamic segment is wrong right now
 });
 
 	// Notes: as long as you have a resource mapped, you can't 'link-to' it
@@ -118,6 +119,7 @@ App.ItemDetailsRoute = Ember.Route.extend({
 			//	OR ...
 
 			// add in transitionTo code that sends you to a page to view what you just submitted. put edit functionality on that page
+			this.transitionTo('fullDetails');
 		}
 	}
 });
